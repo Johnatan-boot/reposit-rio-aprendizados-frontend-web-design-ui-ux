@@ -1,0 +1,192 @@
+/* =========================================================
+   CASA DE TINTAS — UX / BASE
+   ========================================================= */
+
+
+/* =========================================================
+   RESET + BOX MODEL
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   DOCUMENT
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    min-width: 320px;
+
+    background:
+        var(--color-background);
+
+    color:
+        var(--color-text);
+
+    font-family:
+        var(--font-sans);
+
+    font-size:
+        var(--font-size-base);
+
+    line-height:
+        var(--line-height-normal);
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* =========================================================
+   MEDIA
+   ========================================================= */
+
+img,
+picture,
+svg,
+video,
+canvas {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline:
+        3px solid
+        var(--color-focus);
+
+    outline-offset:
+        3px;
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+    background:
+        var(--color-dusty-olive);
+
+    color:
+        var(--color-white);
+}
+
+
+/* =========================================================
+   LAYOUT CONTAINER
+   ========================================================= */
+
+.container {
+    width:
+        min(
+            calc(100% - 2 * var(--space-container)),
+            var(--container-max)
+        );
+
+    margin-inline:
+        auto;
+}
+
+
+/* =========================================================
+   SKIP LINK
+   ========================================================= */
+
+.skip-link {
+    position: fixed;
+
+    top: -100px;
+    left: var(--space-4);
+
+    z-index:
+        var(--z-tooltip);
+
+    padding:
+        var(--space-3)
+        var(--space-4);
+
+    color:
+        var(--color-frozen-water);
+
+    background:
+        var(--color-carbon-black);
+
+    border-radius:
+        var(--radius-md);
+
+    text-decoration:
+        none;
+
+    font-weight:
+        var(--font-weight-semibold);
+
+    transition:
+        top var(--transition-fast);
+}
+
+.skip-link:focus {
+    top:
+        var(--space-4);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

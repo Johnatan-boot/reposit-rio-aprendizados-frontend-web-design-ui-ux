@@ -1,0 +1,21 @@
+{
+  "name": "treinando-ap-frontend",
+  "version": "1.0.0",
+  "description": "<img width=\"1440\" height=\"900\" alt=\"Captura de tela 2026-08-13 170934\" src=\"https://github.com/user-attachments/assets/506d9ad7-710f-4be9-ba2e-cf0f199583fc\" />\r <img width=\"1440\" height=\"900\" alt=\"Captura de tela 2026-08-13 170927\" src=\"https://github.com/user-attachments/assets/6b8b1c7c-c986-495b-a72a-30818a2f3b24\" />\r <img width=\"1440\" height=\"900\" alt=\"Captura de tela 2026-08-13 170920\" src=\"https://github.com/user-attachments/assets/0fad4c6c-4539-4717-ad66-279044f2a018\" />\r <img width=\"1440\" height=\"900\" alt=\"Captura de tela 2026-08-13 170914\" src=\"https://github.com/user-attachments/assets/8ce28647-c361-499a-bca5-a85cc837a316\" />\r <img width=\"1440\" height=\"900\" alt=\"Captura de tela 2026-08-13 170900\" src=\"https://github.com/user-attachments/assets/3368ac0f-b93a-4eb8-8064-6290fffd4c41\" />\r <img width=\"1440\" height=\"900\" alt=\"Captura de tela 2026-08-13 170853\" src=\"https://github.com/user-attachments/assets/e1e79db2-87c8-4c71-9817-8c423b607bf8\" />\r <img width=\"1440\" height=\"900\" alt=\"Captura de tela 2026-08-13 170847\" src=\"https://github.com/user-attachments/assets/5f1b1479-96c4-4c32-9c93-9ecdbb7db4e4\" />\r <img width=\"1440\" height=\"900\" alt=\"Captura de tela 2026-08-13 170839\" src=\"https://github.com/user-attachments/assets/ebc1ece6-5532-43d2-9232-892a14b37413\" />\r 🎨 Casa de Tintas — Web Design & UX/UI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Johnatan-boot/reposit-rio-aprendizados-frontend-web-design-ui-ux.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Johnatan-boot/reposit-rio-aprendizados-frontend-web-design-ui-ux/issues"
+  },
+  "homepage": "https://github.com/Johnatan-boot/reposit-rio-aprendizados-frontend-web-design-ui-ux#readme"
+}

@@ -1,0 +1,76 @@
+Começamos pensando no negócio:
+
+Casa de Tintas
+
+↓
+
+O usuário quer:
+
+encontrar produto
+
+↓
+
+Também quer:
+
+descobrir cores
+
+↓
+
+Pode estar indeciso:
+
+precisa de inspiração
+
+↓
+
+Pode não saber qual produto comprar:
+
+precisa de ajuda
+
+↓
+
+Quer comprar:
+
+CTA / orçamento / carrinho
+
+Então a arquitetura da página nasceu disso:
+
+HEADER
+   ↓
+IDENTIDADE + NAVEGAÇÃO
+
+
+HERO
+   ↓
+PROPOSTA DE VALOR
+
+
+CATEGORIAS
+   ↓
+DESCOBERTA
+
+
+PRODUTOS
+   ↓
+CONVERSÃO
+
+
+CORES
+   ↓
+EXPLORAÇÃO
+
+
+INSPIRAÇÃO
+   ↓
+DESEJO
+
+
+CTA
+   ↓
+CONVERSÃO
+
+
+FOOTER
+   ↓
+CONFIANÇA + INFORMAÇÃO
+
+Isso é UX.

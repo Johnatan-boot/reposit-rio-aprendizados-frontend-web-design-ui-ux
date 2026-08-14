@@ -1,0 +1,41 @@
+.inspiration-card__visual {
+    min-height: 15rem;
+
+    display: grid;
+    place-items: center;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: var(--color-white);
+
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+
+    position: relative;
+    isolation: isolate;
+}
+
+.inspiration-card__visual::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgb(29 30 24 / 0.25);
+
+    z-index: -1;
+}
+
+.inspiration-card__visual--sala {
+    background-image: url("../assets/sala-de-estar.jpg");
+}
+
+.inspiration-card__visual--quarto {
+    background-image: url("../assets/quarto.jpg");
+}
+
+.inspiration-card__visual--cozinha {
+    background-image: url("../assets/cozinha.jpg");
+}

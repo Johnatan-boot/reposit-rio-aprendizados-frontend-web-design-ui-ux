@@ -1,0 +1,23 @@
+.main-nav a,
+.text-link,
+.category-card,
+.inspiration-card__content a,
+.footer-grid a {
+    transition:
+        color var(--transition-fast),
+        opacity var(--transition-fast);
+}
+
+.main-nav a:hover,
+.text-link:hover,
+.inspiration-card__content a:hover,
+.footer-grid a:hover {
+    color: var(--color-primary-hover);
+}
+
+
+.category-card,
+.product-card,
+.inspiration-card {
+    cursor: pointer;
+}

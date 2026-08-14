@@ -1,0 +1,19 @@
+/* =========================================================
+   PRODUTOS — GRID FLUIDO
+   ========================================================= */
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                min(100%, 17rem),
+                1fr
+            )
+        );
+
+    gap:
+        var(--space-grid);
+}

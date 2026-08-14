@@ -1,0 +1,30 @@
+@media (max-width: 1024px) {
+
+    .main-nav {
+        display: none;
+    }
+
+    .menu-button {
+        display: grid;
+    }
+
+    .hero__content {
+        grid-template-columns:
+            1fr;
+    }
+
+    .hero__visual {
+        min-height:
+            24rem;
+    }
+
+    .color-section__content {
+        grid-template-columns:
+            1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}

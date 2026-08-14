@@ -1,0 +1,19 @@
+/* =========================================================
+   CATEGORIAS — GRID FLUIDO
+   ========================================================= */
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                min(100%, 15rem),
+                1fr
+            )
+        );
+
+    gap:
+        var(--space-grid);
+}

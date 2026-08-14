@@ -1,0 +1,12 @@
+.hero__visual {
+    position: relative;
+
+    min-height:
+        clamp(
+            22rem,
+            38vw,
+            34rem
+        );
+
+    isolation: isolate;
+}
