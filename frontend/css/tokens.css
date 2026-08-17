@@ -61,6 +61,26 @@
    --color-deep-navy: #263746;
    --color-soft-lavender: #c9c4dc;
 
+
+   /* =========================================================
+   CORES DE INTERAÇÃO
+   ========================================================= */
+
+--color-primary: var(--color-dusty-olive);
+
+--color-primary-hover: #57755b;
+
+--color-primary-active: #435c47;
+
+--color-focus: var(--color-celadon);
+
+--color-border: #dfe5e1;
+
+--color-text: var(--color-carbon-black);
+
+--color-text-secondary: #59605b;
+
+  
     /* =====================================================
        TIPOGRAFIA
        ===================================================== */
@@ -224,4 +244,15 @@
     --transition-fast: 150ms ease;
 
     --transition-normal: 250ms ease;
+
+
+   /* =========================================================
+   ESTADOS DE INTERAÇÃO
+   ========================================================= */
+
+--color-focus: var(--color-celadon);
+
+--focus-width: 3px;
+
+--focus-offset: 4px;
 }

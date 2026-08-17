@@ -1,30 +1,186 @@
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
 @media (max-width: 1024px) {
+
+    /* -----------------------------------------------------
+       NAVBAR
+       ----------------------------------------------------- */
+
+    .navbar {
+        position: relative;
+       
+    }
+
+    .navbar__content {
+        position: static;
+      
+    }
+
+
+    /* -----------------------------------------------------
+       BOTÃO MENU
+       ----------------------------------------------------- */
+     
+
+    .menu-button {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 2.75rem;
+        height: 2.75rem;
+
+        border: none;
+
+        border-radius:
+            var(--border-radius-md);
+
+        background:
+            transparent;
+
+        color:
+            var(--color-text);
+
+        cursor: pointer;
+
+        transition:
+            background-color var(--transition-fast),
+            transform var(--transition-fast);
+    }
+
+    .menu-button:hover {
+        background:
+            var(--color-frozen-water);
+    }
+
+    .menu-button:active {
+        transform:
+            scale(0.95);
+    }
+
+
+    /* -----------------------------------------------------
+       MENU EXPANDIDO
+       ----------------------------------------------------- */
 
     .main-nav {
         display: none;
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        min-height: 22rem;
+
+        padding:
+            var(--space-6)
+            var(--space-4)
+            var(--space-8);
+
+        background:
+            var(--color-white);
+
+        border: none;
+
+        border-radius: 0;
+
+        box-shadow:
+            0 8px 18px rgb(29 30 24 / 8%);
+
+        z-index: 1000;
     }
 
-    .menu-button {
-        display: grid;
+
+    /* -----------------------------------------------------
+       MENU ABERTO
+       ----------------------------------------------------- */
+
+    .main-nav.main-nav--open {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
     }
 
-    .hero__content {
-        grid-template-columns:
-            1fr;
+
+    /* -----------------------------------------------------
+       LISTA DE NAVEGAÇÃO
+       ----------------------------------------------------- */
+
+    .main-nav ul {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap:
+            var(--space-3);
+
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
     }
 
-    .hero__visual {
-        min-height:
-            24rem;
+
+    /* -----------------------------------------------------
+       LINKS
+       ----------------------------------------------------- */
+
+    .main-nav li {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
     }
 
-    .color-section__content {
-        grid-template-columns:
-            1fr;
+    .main-nav a {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: min(18rem, 100%);
+
+        min-height: 3rem;
+
+        padding:
+            var(--space-3)
+            var(--space-5);
+
+        border-radius:
+            var(--border-radius-md);
+
+        color:
+            var(--color-text);
+
+        text-align: center;
+
+        text-decoration: none;
+
+        transition:
+            background-color var(--transition-fast),
+            color var(--transition-fast);
     }
 
-    .footer-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
+    .main-nav a:hover {
+        background:
+            var(--color-frozen-water);
+
+        color:
+            var(--color-primary);
     }
 }

@@ -1,0 +1,161 @@
+/* =========================================================
+   COMPONENT STATES
+   ========================================================= */
+
+
+/* =========================================================
+   FOCUS — ACESSIBILIDADE
+   ========================================================= */
+
+/*
+ * :focus-visible destaca elementos durante a navegação
+ * por teclado ou tecnologias assistivas.
+ */
+
+:where(
+    a,
+    button,
+    input,
+    select,
+    textarea,
+    summary,
+    [tabindex]:not([tabindex="-1"])
+):focus-visible {
+    outline:
+        var(--focus-width)
+        solid
+        var(--color-focus);
+
+    outline-offset:
+        var(--focus-offset);
+}
+
+
+/* =========================================================
+   LINKS — FOCUS
+   ========================================================= */
+
+a:focus-visible {
+    border-radius:
+        var(--border-radius-sm);
+}
+
+
+/* =========================================================
+   BUTTONS — FOCUS
+   ========================================================= */
+
+button:focus-visible {
+    border-radius:
+        var(--border-radius-sm);
+}
+
+
+/* =========================================================
+   SUMMARY / MENU — FOCUS
+   ========================================================= */
+
+summary:focus-visible {
+    border-radius:
+        var(--border-radius-sm);
+}
+
+
+/* =========================================================
+   ELEMENTOS COM ROLE INTERATIVO — FOCUS
+   ========================================================= */
+
+[role="button"]:focus-visible,
+[role="link"]:focus-visible {
+    outline:
+        var(--focus-width)
+        solid
+        var(--color-focus);
+
+    outline-offset:
+        var(--focus-offset);
+
+    border-radius:
+        var(--border-radius-sm);
+}
+
+
+/* =========================================================
+   ACTIVE — INTERAÇÃO
+   ========================================================= */
+
+/*
+ * :active representa o instante em que o usuário
+ * está pressionando um elemento interativo.
+ *
+ * O efeito é propositalmente sutil para fornecer
+ * feedback imediato sem alterar o layout.
+ */
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button:active,
+.button:active,
+.icon-button:active,
+.menu-button:active {
+    transform:
+        translateY(1px);
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a:active {
+    opacity:
+        0.75;
+}
+
+
+/* =========================================================
+   CARDS INTERATIVOS
+   ========================================================= */
+
+.category-card:active,
+.inspiration-card:active {
+    transform:
+        translateY(2px);
+}
+
+
+/* =========================================================
+   TEXT LINKS
+   ========================================================= */
+
+.text-link:active {
+    opacity:
+        0.75;
+}
+
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    button:active,
+    .button:active,
+    .icon-button:active,
+    .menu-button:active,
+    .category-card:active,
+    .inspiration-card:active {
+        transform:
+            none;
+    }
+
+    a:active,
+    .text-link:active {
+        opacity:
+            1;
+    }
+}

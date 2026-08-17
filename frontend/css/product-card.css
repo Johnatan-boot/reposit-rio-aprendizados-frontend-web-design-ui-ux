@@ -62,3 +62,13 @@
         solid
         var(--color-border);
 }
+
+
+.product-card:focus-within{
+    border-color:
+        var(--color-primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgb(107 143 113 / 20%);
+}

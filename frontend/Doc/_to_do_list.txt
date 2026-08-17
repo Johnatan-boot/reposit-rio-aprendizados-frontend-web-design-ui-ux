@@ -1,0 +1,98 @@
+ETAPA 01 ✅
+HTML semântico
+        ↓
+ETAPA 02 ✅
+Design Tokens
+        ↓
+ETAPA 03 ✅
+Arquitetura CSS
+        ↓
+ETAPA 04 ✅
+Responsividade
+        ↓
+ETAPA 05 ← AGORA
+Imagens + interações
+        ↓
+ETAPA 06
+Estados de UI
+        ↓
+ETAPA 07
+Acessibilidade avançada
+        ↓
+ETAPA 08
+Design System
+        ↓
+ETAPA 09
+JavaScript
+        ↓
+ETAPA 10
+Páginas adicionais
+
+
+[✓] HTML semântico
+[✓] Design Tokens
+[✓] Cards
+[✓] Imagens
+[✓] Hover
+[✓] Zoom
+[✓] Bordas
+[✓] Links
+[✓] Responsividade básica
+[✓] Redução de movimento
+
+[~] estados :focus       ← implementado, validação visual pendente
+[✓] estados :active
+[✓] navegação mobile
+[ ] espaçamento lateral consistente
+[ ] hierarquia tipográfica final
+[ ] contraste
+[ ] comportamento dos botões
+[ ] revisão de acessibilidade
+
+Status
+Fundamentos
+ HTML semântico
+ Design Tokens
+ Grid
+ Componentes
+ Responsividade inicial
+ Estados de interação
+ Foco acessível
+ Reduced Motion
+Próximas evoluções
+ Mobile navigation
+ Auditoria WCAG
+ Página de Design System
+ Segunda paleta
+ Componentização avançada
+ Storybook
+
+ 
+---
+
+# Agora o projeto muda de nível
+
+Até aqui estávamos trabalhando principalmente na **Home**.
+
+A partir daqui, a lógica passa a ser:
+
+```text
+             CASA DE TINTAS
+                    │
+          ┌─────────┴─────────┐
+          │                   │
+       DESIGN              UX/UI
+       SYSTEM              SYSTEM
+          │                   │
+     ┌────┴────┐        ┌─────┴─────┐
+     │         │        │           │
+   Tokens   Components  States   Accessibility
+     │         │        │           │
+     └─────────┴────────┴───────────┘
+                    │
+                    ▼
+              NOVAS PÁGINAS
+
+              sem reinventar o CSS a cada página.
+
+Esse é exatamente o tipo de evolução que vale mostrar em portfólio: você começou com HTML/CSS, passou por semântica e acessibilidade e agora está demonstrando pensamento de Design System e consistência de produto.
