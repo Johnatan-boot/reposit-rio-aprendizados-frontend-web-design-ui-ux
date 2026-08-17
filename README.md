@@ -1,3 +1,4 @@
+<img width="363" height="488" alt="Captura de tela 2026-08-17 100336" src="https://github.com/user-attachments/assets/f87447d1-b0a7-44ae-bd56-bbfec08222e6" />
 <img width="1440" height="900" alt="Captura de tela 2026-08-13 172212" src="https://github.com/user-attachments/assets/d6a85263-586c-42a8-9dbc-06a6f0427039" />
 <img width="1440" height="900" alt="Captura de tela 2026-08-13 172200" src="https://github.com/user-attachments/assets/972be7ae-ad8b-430b-a4a7-65768ded5672" />
 <img width="1440" height="900" alt="Captura de tela 2026-08-13 172151" src="https://github.com/user-attachments/assets/dae66a1c-f001-455e-b0b5-56d53a38061e" />
