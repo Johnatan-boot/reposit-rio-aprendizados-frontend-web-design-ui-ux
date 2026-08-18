@@ -2,18 +2,29 @@
    PRODUTOS — GRID FLUIDO
    ========================================================= */
 
+/* =========================================================
+   PRODUCT GRID
+   ========================================================= */
+
 .product-grid {
     display: grid;
 
     grid-template-columns:
         repeat(
             auto-fit,
-            minmax(
-                min(100%, 17rem),
-                1fr
-            )
+            minmax(280px, 360px)
         );
 
-    gap:
-        var(--space-grid);
+    gap: var(--space-6);
+
+    justify-content: center;
+}
+
+/* =========================================================
+   RESULTADO ÚNICO DE PESQUISA
+   ========================================================= */
+
+.product-grid--search-result {
+    grid-template-columns: minmax(280px, 420px);
+    justify-content: start;
 }

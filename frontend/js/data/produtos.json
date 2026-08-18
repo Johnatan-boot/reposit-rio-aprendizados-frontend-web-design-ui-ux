@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "nome": "Tinta Acrílica Interior Coralar",
+    "descricao": "Tinta para uso em ambientes residenciais internos.",
+    "quantidade": 100,
+    "preco": 109.9,
+    "categoria": "Econômica",
+    "imagem": "../assets/coralar.png"
+  },
+  {
+    "id": 2,
+    "nome": "Tinta Acrílica Exterior Coral Rende Muito",
+    "descricao": "Tinta para uso em ambientes residenciais externos.",
+    "quantidade": 100,
+    "preco": 109.9,
+    "categoria": "Standard",
+    "imagem": "../assets/super-lavavel.png"
+  },
+  {
+    "id": 3,
+    "nome": "Tinta Premium Fosca",
+    "descricao": "Alta cobertura e acabamento sofisticado.",
+    "quantidade": 50,
+    "preco": 189.9,
+    "categoria": "Premium",
+    "imagem": "../assets/master-fosco.png"
+  },
+  {
+    "id": 4,
+    "nome": "Tinta Super Lavável",
+    "descricao": "Ideal para ambientes de alto uso.",
+    "quantidade": 45,
+    "preco": 219.9,
+    "categoria": "Premium",
+    "imagem": "../assets/super-lavavel.png"
+  },
+  {
+    "id": 5,
+    "nome": "Esmalte Premium",
+    "descricao": "Proteção e brilho para madeira e metal.",
+    "quantidade": 70,
+    "preco": 89.9,
+    "categoria": "Premium",
+    "imagem": "../assets/coralit-premium.png"
+  },
+  {
+    "id": 6,
+    "nome": "Textura Decorativa",
+    "descricao": "Crie paredes com personalidade.",
+    "quantidade": 50,
+    "preco": 119.9,
+    "categoria": "Standard",
+    "imagem": "../assets/grafiato.png"
+  },
+  {
+    "id": 7,
+    "nome": "Grafiato Premium",
+    "descricao": "Revestimento texturizado para ambientes internos e externos.",
+    "quantidade": 35,
+    "preco": 149.9,
+    "categoria": "Premium",
+    "imagem": "../assets/grafiato.png"
+  },
+  {
+    "id": 8,
+    "nome": "Massa Corrida",
+    "descricao": "Para nivelamento e acabamento de paredes internas.",
+    "quantidade": 80,
+    "preco": 59.9,
+    "categoria": "Econômica",
+    "imagem": "../assets/grafiato.png"
+  }
+]

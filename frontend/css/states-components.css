@@ -159,3 +159,153 @@ a:active {
             1;
     }
 }
+
+
+
+/* =========================================================
+   COMPONENT STATES
+   ========================================================= */
+
+
+/* =========================================================
+   BUTTON — BASE
+   ========================================================= */
+
+.button,
+.icon-button,
+.menu-button {
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast),
+        transform var(--transition-fast),
+        opacity var(--transition-fast);
+}
+
+
+/* =========================================================
+   BUTTON — HOVER
+   ========================================================= */
+
+.button:hover,
+.icon-button:hover,
+.menu-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        var(--shadow-sm);
+}
+
+
+/* =========================================================
+   BUTTON — ACTIVE
+   ========================================================= */
+
+.button:active,
+.icon-button:active,
+.menu-button:active {
+    transform: translateY(0);
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   BUTTON — PRIMARY
+   ========================================================= */
+
+.button--primary:hover {
+    background-color:
+        var(--color-primary-hover);
+}
+
+
+/* =========================================================
+   BUTTON — PRIMARY ACTIVE
+   ========================================================= */
+
+.button--primary:active {
+    background-color:
+        var(--color-primary-active);
+}
+
+
+/* =========================================================
+   BUTTON — SECONDARY
+   ========================================================= */
+
+.button--secondary:hover {
+    border-color:
+        var(--color-primary);
+
+    color:
+        var(--color-primary);
+}
+
+
+/* =========================================================
+   BUTTON — LIGHT
+   ========================================================= */
+
+.button--light:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        var(--shadow-sm);
+}
+
+
+/* =========================================================
+   BUTTON — DISABLED
+   ========================================================= */
+
+.button:disabled,
+.icon-button:disabled,
+.menu-button:disabled,
+.button[aria-disabled="true"],
+.icon-button[aria-disabled="true"],
+.menu-button[aria-disabled="true"] {
+    cursor:
+        not-allowed;
+
+    opacity:
+        0.55;
+
+    pointer-events:
+        none;
+
+    transform:
+        none;
+
+    box-shadow:
+        none;
+}
+
+
+/* =========================================================
+   BUTTON — REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .button,
+    .icon-button,
+    .menu-button {
+        transition:
+            none;
+    }
+
+    .button:hover,
+    .icon-button:hover,
+    .menu-button:hover,
+    .button:active,
+    .icon-button:active,
+    .menu-button:active {
+        transform:
+            none;
+    }
+}

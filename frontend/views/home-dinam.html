@@ -27,6 +27,11 @@
     <link rel="stylesheet" href="../css/product-card.css" />
     <link rel="stylesheet" href="../css/category-card.css" />
     <link rel="stylesheet" href="../css/elements-click.css" />
+    <link rel="stylesheet" href="../css/cart.css" />
+    <link
+    rel="stylesheet"
+    href="../css/product-filters.css"
+/>
   </head>
   <body>
     <!-- =====================================================
@@ -98,20 +103,30 @@
           <!-- Ações -->
           <div class="navbar__actions">
             <button
-              type="button"
-              class="icon-button"
-              aria-label="Pesquisar produtos"
-            >
-              <span aria-hidden="true">🔍</span>
-            </button>
+            type="button"
+            class="icon-button search-button"
+            id="search-button"
+            aria-label="Pesquisar produtos"
+            aria-expanded="false"
+            aria-controls="search-container"
+        >
+            <span aria-hidden="true">🔍</span>
+        </button>
+           <button
+            type="button"
+            class="icon-button"
+            id="cart-button"
+            aria-label="Abrir carrinho de compras"
+        >
+            <span aria-hidden="true">🛒</span>
 
-            <button
-              type="button"
-              class="icon-button"
-              aria-label="Carrinho de compras"
+            <span
+                class="cart-count"
+                aria-label="0 produtos no carrinho"
             >
-              <span aria-hidden="true">🛒</span>
-            </button>
+                0
+            </span>
+        </button>
 
             <button
               type="button"
@@ -123,6 +138,23 @@
               <span class="menu-button__icon" aria-hidden="true">☰</span>
             </button>
           </div>
+          <div
+    class="search-container"
+    id="search-container"
+    hidden
+>
+    <label for="product-search" class="sr-only">
+        Pesquisar produtos
+    </label>
+
+    <input
+        type="search"
+        id="product-search"
+        class="search-input"
+        placeholder="Buscar produtos..."
+        autocomplete="off"
+    >
+</div>
         </div>
       </div>
     </header>
@@ -239,106 +271,11 @@
             </div>
             <a href="#" class="text-link">Ver todos os produtos →</a>
           </header>
-
-          <div class="product-grid">
-            <article class="product-card">
-              <div class="product-card__image">
-                <span class="product-card__badge">Mais vendido</span>
-                <img
-                  src="../assets/master-fosco.png"
-                  alt="Tinta Premium Fosca"
-                />
-              </div>
-              <div class="product-card__body">
-                <p class="product-card__category">Tinta acrílica</p>
-                <h3>Tinta Premium Fosca</h3>
-                <p class="product-card__description">
-                  Alta cobertura e acabamento sofisticado.
-                </p>
-                <div class="product-card__footer">
-                  <div>
-                    <span class="price-label">A partir de</span>
-                    <strong class="price">R$ 189,90</strong>
-                  </div>
-                  <button type="button" class="button button--small">
-                    Comprar
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <article class="product-card">
-              <div class="product-card__image">
-                <img
-                  src="../assets/super-lavavel.png"
-                  alt="Tinta Super Lavável"
-                />
-              </div>
-              <div class="product-card__body">
-                <p class="product-card__category">Tinta acrílica</p>
-                <h3>Tinta Super Lavável</h3>
-                <p class="product-card__description">
-                  Ideal para ambientes de alto uso.
-                </p>
-                <div class="product-card__footer">
-                  <div>
-                    <span class="price-label">A partir de</span>
-                    <strong class="price">R$ 219,90</strong>
-                  </div>
-                  <button type="button" class="button button--small">
-                    Comprar
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <article class="product-card">
-              <div class="product-card__image">
-                <img
-                  src="../assets/coralit-premium.png"
-                  alt="Esmalte Premium"
-                />
-              </div>
-              <div class="product-card__body">
-                <p class="product-card__category">Esmalte</p>
-                <h3>Esmalte Premium</h3>
-                <p class="product-card__description">
-                  Proteção e brilho para madeira e metal.
-                </p>
-                <div class="product-card__footer">
-                  <div>
-                    <span class="price-label">A partir de</span>
-                    <strong class="price">R$ 89,90</strong>
-                  </div>
-                  <button type="button" class="button button--small">
-                    Comprar
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <article class="product-card">
-              <div class="product-card__image">
-                <img src="../assets/grafiato.png" alt="Textura Decorativa" />
-              </div>
-              <div class="product-card__body">
-                <p class="product-card__category">Textura</p>
-                <h3>Textura Decorativa</h3>
-                <p class="product-card__description">
-                  Crie paredes com personalidade.
-                </p>
-                <div class="product-card__footer">
-                  <div>
-                    <span class="price-label">A partir de</span>
-                    <strong class="price">R$ 119,90</strong>
-                  </div>
-                  <button type="button" class="button button--small">
-                    Comprar
-                  </button>
-                </div>
-              </div>
-            </article>
-          </div>
+           <div
+            class="product-filters"
+            aria-label="Filtros de produtos"
+        ></div>
+          <div class="product-grid"></div>
         </div>
       </section>
 
@@ -355,68 +292,15 @@
             <a href="#" class="button button--light">Explorar cores</a>
           </div>
 
-              <div
-          class="color-palette"
-          aria-hidden="true"
-        >
-          <span style="--swatch: #1d1e18"></span>
-          <span style="--swatch: #6b8f71"></span>
-          <span style="--swatch: #aad2ba"></span>
-          <span style="--swatch: #d9fff5"></span>
-          <span style="--swatch: #b9f5d8"></span>
-        </div>
+          <div class="color-palette" aria-hidden="true">
+            <span style="--swatch: #1d1e18"></span>
+            <span style="--swatch: #6b8f71"></span>
+            <span style="--swatch: #aad2ba"></span>
+            <span style="--swatch: #d9fff5"></span>
+            <span style="--swatch: #b9f5d8"></span>
+          </div>
         </div>
       </section>
-
-      <!-- INSPIRAÇÃO 
-         
-        <section id="inspiracao" class="section" aria-labelledby="inspiracao-title">
-            <div class="container">
-                <header class="section-header">
-                    <p class="eyebrow">INSPIRE-SE</p>
-                    <h2 id="inspiracao-title">Transforme seu ambiente</h2>
-                </header>
-
-                <div class="inspiration-grid">
-              <article class="inspiration-card inspiration-card--large">
-                    <div class="inspiration-card__visual inspiration-card__visual--sala" aria-hidden="true">
-                        Sala
-                    </div>
-
-                    <div class="inspiration-card__content">
-                        <h3>Uma sala que acolhe</h3>
-                        <p>Tons suaves para criar conforto.</p>
-                        <a href="#">Ver inspiração →</a>
-                    </div>
-                </article>
-
-                <article class="inspiration-card">
-                    <div class="inspiration-card__visual inspiration-card__visual--quarto" aria-hidden="true">
-                        Quarto
-                    </div>
-
-                    <div class="inspiration-card__content">
-                        <h3>Seu espaço de descanso</h3>
-                        <a href="#">Ver inspiração →</a>
-                    </div>
-                </article>
-
-                <article class="inspiration-card">
-                    <div class="inspiration-card__visual inspiration-card__visual--cozinha" aria-hidden="true">
-                        Cozinha
-                    </div>
-
-                    <div class="inspiration-card__content">
-                        <h3>Mais vida na cozinha</h3>
-                        <a href="#">Ver inspiração →</a>
-                    </div>
-                </article>
-                </div>
-            </div>
-        </section>
-        
-        
-        -->
 
       <section
         class="section"
@@ -594,6 +478,14 @@
       </div>
     </footer>
     <script src="/frontend/js/navigation.js" defer></script>
-    <script src="/frontend/js/aprendizados-js.js" defer></script>
+    <script type="module" src="../js/app.js"></script>
+    <script
+    type="module"
+    src="/frontend/js/search.js"
+></script>
+<script
+    type="module"
+    src="/frontend/js/filter.js"
+></script>
   </body>
 </html>

@@ -49,6 +49,112 @@ body {
 
 
 /* =========================================================
+   TYPOGRAPHY — HIERARQUIA GLOBAL
+   ========================================================= */
+
+body {
+    font-size:
+        var(--font-size-base);
+
+    line-height:
+        var(--line-height-normal);
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+    margin: 0;
+
+    color:
+        var(--color-text);
+
+    line-height:
+        var(--line-height-tight);
+}
+
+
+/* =========================================================
+   H1 — TÍTULO PRINCIPAL
+   ========================================================= */
+
+h1 {
+    font-size:
+        var(--font-size-3xl);
+
+    font-weight:
+        var(--font-weight-extrabold);
+}
+
+
+/* =========================================================
+   H2 — TÍTULOS DE SEÇÃO
+   ========================================================= */
+
+h2 {
+    font-size:
+        var(--font-size-2xl);
+
+    font-weight:
+        var(--font-weight-bold);
+}
+
+
+/* =========================================================
+   H3 — TÍTULOS DE COMPONENTES
+   ========================================================= */
+
+h3 {
+    font-size:
+        var(--font-size-xl);
+
+    font-weight:
+        var(--font-weight-semibold);
+}
+
+
+/* =========================================================
+   PARÁGRAFOS
+   ========================================================= */
+
+p {
+    line-height:
+        var(--line-height-normal);
+}
+
+
+/* =========================================================
+   EYEBROW — TEXTO DE CONTEXTO
+   ========================================================= */
+
+.eyebrow {
+    margin: 0;
+
+    color:
+        var(--color-primary);
+
+    font-size:
+        var(--font-size-xs);
+
+    font-weight:
+        var(--font-weight-bold);
+
+    line-height:
+        var(--line-height-normal);
+
+    letter-spacing:
+        0.08em;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
    MEDIA
    ========================================================= */
 
@@ -121,8 +227,8 @@ a {
 .container {
     width:
         min(
-            calc(100% - 2 * var(--space-container)),
-            var(--container-max)
+            calc(100% - 2 * var(--page-gutter)),
+            var(--container-xl)
         );
 
     margin-inline:
@@ -216,39 +322,6 @@ a {
 }
 
 
-/* ---------------------------------------------------------
-   BOTÕES
-   --------------------------------------------------------- */
-
-.button {
-    transition:
-        transform var(--transition-fast),
-        box-shadow var(--transition-fast),
-        background-color var(--transition-fast),
-        color var(--transition-fast),
-        border-color var(--transition-fast);
-}
-
-.button:hover {
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        var(--shadow-sm);
-}
-
-.button:active {
-    transform:
-        translateY(0);
-}
-
-.button:disabled,
-.button[aria-disabled="true"] {
-    cursor: not-allowed;
-    opacity: 0.55;
-    transform: none;
-    box-shadow: none;
-}
 
 
 /* ---------------------------------------------------------
@@ -314,4 +387,34 @@ a:active {
 
 a:active {
     opacity: 0.75;
+}
+
+
+/* =========================================================
+   CONTAINER — RESPONSIVIDADE
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+    .container {
+        width:
+            min(
+                calc(100% - 2 * var(--page-gutter-tablet)),
+                var(--container-xl)
+            );
+    }
+
+}
+
+
+@media (min-width: 1200px) {
+
+    .container {
+        width:
+            min(
+                calc(100% - 2 * var(--page-gutter-desktop)),
+                var(--container-xl)
+            );
+    }
+
 }

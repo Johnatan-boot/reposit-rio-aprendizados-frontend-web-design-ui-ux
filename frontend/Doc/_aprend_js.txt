@@ -1,0 +1,77 @@
+DOM → eventos → estado → componentes → dados → APIs → async → persistência → arquitetura → performance → testes → segurança → produção.
+
+Abaixo está um mapa completo do JavaScript para Front-end, do básico ao avançado, e depois podemos executar cada módulo diretamente no projeto.
+
+🚀 TRILHA COMPLETA — JAVASCRIPT FRONT-END
+JAVASCRIPT
+│   ├── PATCH
+│   ├── DELETE
+│   ├── Headers
+│   └── HTTP errors
+│
+├── 10. Arquitetura Front-end
+│   ├── Modules
+│   ├── Services
+│   ├── Components
+│   ├── Utils
+│   ├── State
+│   └── Separation of concerns
+│
+├── 11. Programação avançada
+│   ├── Closures
+│   ├── Prototypes
+│   ├── Classes
+│   ├── this
+│   ├── bind/call/apply
+│   ├── Generators
+│   ├── Iterators
+│   └── Symbols
+│
+├── 12. Performance
+│   ├── Debounce
+│   ├── Throttle
+│   ├── Lazy loading
+│   ├── Code splitting
+│   ├── Render optimization
+│   ├── Event delegation
+│   └── Web Workers
+│
+├── 13. Segurança
+│   ├── XSS
+│   ├── CSRF
+│   ├── Sanitização
+│   ├── CORS
+│   ├── Content Security Policy
+│   └── Storage security
+│
+├── 14. Acessibilidade
+│   ├── Keyboard
+│   ├── ARIA
+│   ├── Focus
+│   ├── Screen readers
+│   └── Reduced motion
+│
+├── 15. Testes
+│   ├── Unitários
+│   ├── Integração
+│   ├── E2E
+│   ├── Mocks
+│   └── Coverage
+│
+├── 16. Engenharia Front-end
+│   ├── Clean Code
+│   ├── SOLID
+│   ├── Design Patterns
+│   ├── DRY
+│   ├── KISS
+│   ├── YAGNI
+│   └── arquitetura escalável
+│
+└── 17. Produção
+    ├── Vite
+    ├── Build
+    ├── Environment Variables
+    ├── Minificação
+    ├── Deploy
+    ├── Monitoring
+    └── documentação

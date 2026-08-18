@@ -184,3 +184,50 @@
             var(--color-primary);
     }
 }
+
+
+/* =========================================================
+   TYPOGRAPHY — MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    h1 {
+        font-size:
+            var(--font-size-2xl);
+    }
+
+    h2 {
+        font-size:
+            var(--font-size-xl);
+    }
+
+    h3 {
+        font-size:
+            var(--font-size-lg);
+    }
+
+}
+
+/* =========================================================
+   TYPOGRAPHY — DESKTOP
+   ========================================================= */
+
+@media (min-width: 1200px) {
+
+    h1 {
+        font-size:
+            var(--font-size-3xl);
+    }
+
+    h2 {
+        font-size:
+            var(--font-size-2xl);
+    }
+
+    h3 {
+        font-size:
+            var(--font-size-xl);
+    }
+
+}

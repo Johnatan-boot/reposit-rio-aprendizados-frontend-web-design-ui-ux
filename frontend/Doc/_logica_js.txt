@@ -1,0 +1,102 @@
+index.html
+     │
+     ▼
+ app.js
+     │
+     ├── import → currency.js
+     │
+     ▼
+ carregarProdutos()
+     │
+     ▼
+ fetch()
+     │
+     ▼
+ produtos.json
+     │
+     ▼
+ response.json()
+     │
+     ▼
+ Array de produtos
+     │
+     ▼
+ forEach()
+     │
+     ▼
+ criarProdutoCard()
+     │
+     ▼
+ .product-grid
+     │
+     ▼
+ CARDS NA TELA
+
+
+
+ cart-state.js
+    ↓
+guarda o estado
+
+cart.js
+    ↓
+mostra o estado
+
+product-card.js
+    ↓
+dispara eventos
+
+app.js
+    ↓
+coordena tudo
+
+
+search.js
+   ↓
+captura interação
+
+app.js
+   ↓
+carrega dados
+
+store.js
+   ↓
+gerencia estado
+
+DOM
+   ↓
+mostra resultado
+
+
+produtos.json
+      ↓
+array de produtos
+      ↓
+searchInput
+      ↓
+.filter()
+      ↓
+resultado
+      ↓
+renderizarProdutos()
+      ↓
+cards atualizados
+
+A sequência que eu recomendo para seu aprendizado frontend é:
+
+11.8  ✅ localStorage
+11.9  ✅ busca
+11.10 → filtros
+11.11 → ordenação
+11.12 → paginação / carregamento progressivo
+11.13 → estados de loading
+11.14 → tratamento de erros
+11.15 → debounce da busca
+11.16 → refatoração
+11.17 → performance
+11.18 → SEO técnico
+11.19 → integração com API
+11.20 → autenticação
+11.21 → testes
+11.22 → build
+11.23 → deploy
