@@ -1,8 +1,13 @@
 /* =========================================================
-   MOBILE NAVIGATION
+   CASA DE TINTAS — RESPONSIVE
    ========================================================= */
 
-@media (max-width: 1024px) {
+
+/* =========================================================
+   TABLET / MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 1023px) {
 
     /* -----------------------------------------------------
        NAVBAR
@@ -10,19 +15,56 @@
 
     .navbar {
         position: relative;
-       
+        width: 100%;
+        background: var(--color-white);
     }
 
+
     .navbar__content {
-        position: static;
-      
+        position: relative;
+
+        display: flex;
+        align-items: center;
+
+        min-height: 4.5rem;
+
+        gap: var(--space-4);
+    }
+
+
+    /* -----------------------------------------------------
+       LOGO
+       ----------------------------------------------------- */
+
+    .navbar .brand {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+
+    .brand__name {
+        white-space: nowrap;
+    }
+
+
+    /* -----------------------------------------------------
+       AÇÕES
+       ----------------------------------------------------- */
+
+    .navbar__actions {
+        display: flex;
+
+        align-items: center;
+
+        gap: var(--space-2);
+
+        margin-left: auto;
     }
 
 
     /* -----------------------------------------------------
        BOTÃO MENU
        ----------------------------------------------------- */
-     
 
     .menu-button {
         display: inline-flex;
@@ -30,41 +72,71 @@
         align-items: center;
         justify-content: center;
 
+        flex: 0 0 auto;
+
         width: 2.75rem;
         height: 2.75rem;
 
-        border: none;
+        padding: 0;
 
-        border-radius:
-            var(--border-radius-md);
+        border: 0;
 
-        background:
-            transparent;
+        border-radius: var(--radius-md);
 
-        color:
-            var(--color-text);
+        background: transparent;
+
+        color: var(--color-carbon-black);
 
         cursor: pointer;
 
         transition:
             background-color var(--transition-fast),
+            color var(--transition-fast),
             transform var(--transition-fast);
     }
 
+
     .menu-button:hover {
-        background:
-            var(--color-frozen-water);
+        background-color: var(--color-frozen-water);
+
+        color: var(--color-dusty-olive);
     }
 
+
     .menu-button:active {
-        transform:
-            scale(0.95);
+        transform: scale(0.95);
+    }
+
+
+    .menu-button[aria-expanded="true"] {
+        background-color: var(--color-frozen-water);
+
+        color: var(--color-dusty-olive);
     }
 
 
     /* -----------------------------------------------------
-       MENU EXPANDIDO
+       ÍCONE DO MENU
        ----------------------------------------------------- */
+
+    .menu-button__icon {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 1.5rem;
+        height: 1.5rem;
+
+        font-size: 1.5rem;
+
+        line-height: 1;
+    }
+
+
+    /* =====================================================
+       MENU PRINCIPAL — FECHADO
+       ===================================================== */
 
     .main-nav {
         display: none;
@@ -73,60 +145,66 @@
 
         top: 100%;
 
-        left: 0;
-        right: 0;
+        /*
+         * IMPORTANTE:
+         * Faz o menu ocupar exatamente a largura da viewport,
+         * mesmo estando dentro do .container.
+         */
+        left: 50%;
 
-        width: 100%;
+        width: 100vw;
 
-        min-height: 22rem;
+        transform: translateX(-50%);
+
+        min-height: calc(100dvh - 4.5rem);
 
         padding:
-            var(--space-6)
+            var(--space-8)
             var(--space-4)
-            var(--space-8);
+            var(--space-12);
 
-        background:
-            var(--color-white);
+        background-color: var(--color-white);
 
-        border: none;
+        border: 0;
 
         border-radius: 0;
 
         box-shadow:
-            0 8px 18px rgb(29 30 24 / 8%);
+            0 8px 20px rgb(29 30 24 / 8%);
 
         z-index: 1000;
+
+        overflow-y: auto;
     }
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        MENU ABERTO
-       ----------------------------------------------------- */
+       ===================================================== */
 
     .main-nav.main-nav--open {
         display: flex;
 
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
     }
 
 
-    /* -----------------------------------------------------
-       LISTA DE NAVEGAÇÃO
-       ----------------------------------------------------- */
+    /* =====================================================
+       LISTA
+       ===================================================== */
 
     .main-nav ul {
+        width: 100%;
+
         display: flex;
 
         flex-direction: column;
 
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
 
-        gap:
-            var(--space-3);
-
-        width: 100%;
+        gap: var(--space-3);
 
         margin: 0;
         padding: 0;
@@ -135,37 +213,46 @@
     }
 
 
-    /* -----------------------------------------------------
-       LINKS
-       ----------------------------------------------------- */
+    /* =====================================================
+       ITENS
+       ===================================================== */
 
     .main-nav li {
         width: 100%;
 
         display: flex;
 
+        align-items: center;
         justify-content: center;
     }
 
+
+    /* =====================================================
+       LINKS
+       ===================================================== */
+
     .main-nav a {
-        display: inline-flex;
+        position: relative;
+
+        display: flex;
 
         align-items: center;
         justify-content: center;
 
-        width: min(18rem, 100%);
+        width: min(22rem, 100%);
 
-        min-height: 3rem;
+        min-height: 3.5rem;
 
         padding:
             var(--space-3)
             var(--space-5);
 
-        border-radius:
-            var(--border-radius-md);
+        border-radius: var(--radius-md);
 
-        color:
-            var(--color-text);
+        color: var(--color-carbon-black);
+
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-medium);
 
         text-align: center;
 
@@ -176,58 +263,385 @@
             color var(--transition-fast);
     }
 
-    .main-nav a:hover {
-        background:
-            var(--color-frozen-water);
 
-        color:
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+        background-color: var(--color-frozen-water);
+
+        color: var(--color-dusty-olive);
+    }
+
+
+    /* -----------------------------------------------------
+       REMOVE LINHA DESKTOP NO MOBILE
+       ----------------------------------------------------- */
+
+    .main-nav a::after {
+        display: none;
+    }
+
+
+    /* -----------------------------------------------------
+       FOCO
+       ----------------------------------------------------- */
+
+    .main-nav a:focus-visible {
+        outline:
+            3px solid
             var(--color-primary);
+
+        outline-offset: 2px;
     }
 }
 
 
 /* =========================================================
-   TYPOGRAPHY — MOBILE
+   CELULAR
    ========================================================= */
 
 @media (max-width: 767px) {
 
+    /* -----------------------------------------------------
+       NAVBAR
+       ----------------------------------------------------- */
+
+    .navbar__content {
+        min-height: 4.5rem;
+
+        padding-inline:
+            var(--page-gutter);
+    }
+
+
+    /* -----------------------------------------------------
+       TOPBAR
+       ----------------------------------------------------- */
+
+    .topbar__content {
+        display: none;
+    }
+
+
+    /* -----------------------------------------------------
+       MENU
+       ----------------------------------------------------- */
+
+    .main-nav {
+        /*
+         * 4.5rem = altura da navbar.
+         * O restante da tela fica totalmente branco.
+         */
+        min-height: calc(100dvh - 4.5rem);
+
+        padding:
+            var(--space-8)
+            var(--page-gutter)
+            var(--space-12);
+    }
+
+
+    .main-nav ul {
+        gap: var(--space-3);
+    }
+
+
+    .main-nav a {
+        width: 100%;
+
+        min-height: 3.5rem;
+    }
+
+
+    /* -----------------------------------------------------
+       AÇÕES
+       ----------------------------------------------------- */
+
+    .navbar__actions {
+        gap: var(--space-1);
+    }
+
+
+    /* -----------------------------------------------------
+       ESCONDE BUSCA E CARRINHO NO CELULAR PEQUENO
+       ----------------------------------------------------- */
+
+    .navbar__actions .icon-button {
+        display: none;
+    }
+
+
+    /* -----------------------------------------------------
+       TIPOGRAFIA
+       ----------------------------------------------------- */
+
     h1 {
-        font-size:
-            var(--font-size-2xl);
+        font-size: var(--font-size-2xl);
     }
 
     h2 {
-        font-size:
-            var(--font-size-xl);
+        font-size: var(--font-size-xl);
     }
 
     h3 {
-        font-size:
-            var(--font-size-lg);
+        font-size: var(--font-size-lg);
     }
-
 }
 
+
 /* =========================================================
-   TYPOGRAPHY — DESKTOP
+   CELULAR MUITO PEQUENO
    ========================================================= */
 
-@media (min-width: 1200px) {
+@media (max-width: 480px) {
 
-    h1 {
-        font-size:
-            var(--font-size-3xl);
+    .navbar__content {
+        min-height: 4.25rem;
     }
 
-    h2 {
-        font-size:
-            var(--font-size-2xl);
+
+    .main-nav {
+        min-height: calc(100dvh - 4.25rem);
     }
 
-    h3 {
-        font-size:
-            var(--font-size-xl);
+
+    .brand__name {
+        font-size: var(--font-size-base);
     }
 
+
+    .brand__mark {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+
+    .menu-button {
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+
+
+    .main-nav {
+        padding-inline: var(--space-4);
+    }
+
+
+    .main-nav a {
+        min-height: 3.25rem;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .navbar__content {
+        min-height: 5rem;
+    }
+
+
+    .main-nav {
+        /*
+         * Topbar continua visível no tablet,
+         * mas o menu começa exatamente abaixo da navbar.
+         */
+        min-height: calc(100dvh - 7.5rem);
+
+        padding:
+            var(--space-8)
+            var(--space-6)
+            var(--space-12);
+    }
+
+
+    .main-nav a {
+        width: min(24rem, 100%);
+
+        min-height: 3.5rem;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1024px) {
+
+    .menu-button {
+        display: none;
+    }
+
+
+    .main-nav {
+        display: block;
+
+        position: static;
+
+        width: auto;
+
+        min-height: auto;
+
+        padding: 0;
+
+        transform: none;
+
+        background: transparent;
+
+        box-shadow: none;
+
+        overflow: visible;
+    }
+
+
+    .main-nav ul {
+        display: flex;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: var(--space-8);
+    }
+
+
+    .main-nav li {
+        width: auto;
+    }
+
+
+    .main-nav a {
+        width: auto;
+
+        min-height: auto;
+
+        padding-block: var(--space-2);
+
+        border-radius: 0;
+    }
+
+
+    .main-nav a::after {
+        display: block;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP GRANDE / TV
+   ========================================================= */
+
+@media (min-width: 1440px) {
+
+    .main-nav ul {
+        gap: 2.5rem;
+    }
+}
+
+
+/* =========================================================
+   HERO — RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    .category-grid,
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .hero__content {
+        grid-template-columns: 1fr;
+    }
+
+
+    .hero__visual {
+        min-height: 24rem;
+    }
+
+
+    .color-section__content {
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE — CONTEÚDO
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .hero__content {
+        min-height: auto;
+
+        padding-block: var(--space-16);
+    }
+
+
+    .hero__visual {
+        min-height: 20rem;
+    }
+
+
+    .section-header--row {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .category-grid,
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .inspiration-grid {
+        grid-template-columns: 1fr;
+
+        grid-template-rows: auto;
+    }
+
+
+    .inspiration-card--large {
+        grid-row: auto;
+    }
+
+
+    .cta__content {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .main-nav,
+    .main-nav a,
+    .menu-button {
+        transition: none;
+    }
 }

@@ -1,0 +1,62 @@
+/* =========================================================
+   HERO — VISUAL — INTERIOR
+   ========================================================= */
+
+.hero__visual-interior .hero__paint-card--main {
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--color-digital-blue),
+            var(--color-indigo-velvet)
+        );
+}
+
+
+.hero__visual-interior .hero__paint-circle {
+
+    background:
+        var(--color-emerald);
+
+    box-shadow:
+        0 2rem 4rem
+        rgb(70 35 122 / 25%);
+}
+
+
+.hero__visual-interior .hero__paint-info {
+
+    background:
+        rgb(252 252 252 / 90%);
+}
+
+
+.hero__visual-interior .hero__paint-label {
+
+    color:
+        var(--color-digital-blue);
+}
+
+
+.hero__visual-interior .hero__paint-info strong {
+
+    color:
+        var(--color-indigo-velvet);
+}
+
+
+.hero__visual-interior .hero__paint-card--small {
+
+    background:
+        var(--color-hot-fuchsia);
+
+    box-shadow:
+        var(--shadow-lg);
+}
+
+
+.hero__visual-interior .hero__paint-card--small span {
+
+    background:
+        var(--color-digital-blue);
+}

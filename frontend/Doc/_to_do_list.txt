@@ -367,3 +367,251 @@ Deploy
 
 ETAPA 17
 Documentação
+
+
+
+
+
+
+🚀 Próxima tarefa — ETAPA 11
+JavaScript: estados da interface + tratamento de erros
+
+Hoje construímos:
+
+JSON
+ ↓
+Fetch
+ ↓
+Product Service
+ ↓
+Cache
+ ↓
+App.js
+ ↓
+DOM
+ ↓
+Cards
+ ↓
+Busca / Filtro
+ ↓
+Store
+ ↓
+Carrinho
+
+Amanhã vamos ensinar a aplicação a se comportar como uma aplicação profissional quando alguma coisa dá errado ou está acontecendo.
+
+1. Loading State
+
+Quando os produtos estiverem carregando:
+
+Carregando produtos...
+
+em vez de a área simplesmente ficar vazia.
+
+2. Error State
+
+Se produtos.json não carregar:
+
+Não foi possível carregar os produtos.
+Tente novamente.
+
+com botão:
+
+Tentar novamente
+3. Empty State
+
+Se uma pesquisa não encontrar nada:
+
+Nenhum produto encontrado.
+
+em vez de deixar a tela vazia.
+
+4. Estados da busca
+
+Vamos trabalhar:
+
+IDLE
+ ↓
+LOADING
+ ↓
+SUCCESS
+
+ou:
+
+LOADING
+ ↓
+ERROR
+
+e:
+
+SEARCH
+ ↓
+NO RESULTS
+
+Isso começa a introduzir um conceito muito importante:
+
+Estado de interface (UI State).
+
+🧠 Depois disso vem a sequência
+
+Eu organizaria nossa jornada assim:
+
+ETAPA 10 ✅
+JavaScript fundamental + DOM + Fetch + JSON + Store
+
+
+        ↓
+
+
+ETAPA 11
+Estados da interface + Error Handling + Loading + Empty States
+
+
+        ↓
+
+
+ETAPA 12
+JavaScript avançado
+Promises
+async/await
+modules
+closures
+destructuring
+spread/rest
+higher-order functions
+array methods
+        ↓
+
+
+ETAPA 13
+Arquitetura frontend
+Services
+Store
+Utils
+Components
+separação de responsabilidades
+
+
+        ↓
+
+
+ETAPA 14
+Performance
+debounce
+throttle
+cache
+lazy loading
+event delegation
+renderização eficiente
+
+
+        ↓
+
+
+ETAPA 15
+SEO técnico
+metadata
+semântica
+Open Graph
+JSON-LD
+Core Web Vitals
+
+
+        ↓
+
+
+ETAPA 16
+Integração com Backend
+REST API
+GET
+POST
+PUT
+DELETE
+CRUD
+autenticação
+
+
+        ↓
+
+
+ETAPA 17
+Testes
+unitários
+integração
+E2E
+
+
+        ↓
+
+
+ETAPA 18
+Deploy
+ambiente
+produção
+variáveis
+CI/CD
+
+
+        ↓
+
+
+ETAPA 19
+Documentação
+README
+arquitetura
+API
+decisões técnicas
+
+E aí teremos uma evolução muito legal:
+
+HTML
+  ↓
+CSS
+  ↓
+UI/UX
+  ↓
+JavaScript
+  ↓
+DOM
+  ↓
+APIs
+  ↓
+Estado
+  ↓
+Arquitetura
+  ↓
+Performance
+  ↓
+SEO
+  ↓
+Backend
+  ↓
+Testes
+  ↓
+Deploy
+  ↓
+Documentação
+🎯 Objetivo de amanhã
+
+No final da próxima sessão, quero que seu projeto consiga lidar corretamente com quatro situações:
+
+              PRODUTOS
+                  │
+          ┌───────┴───────┐
+          │               │
+      carregando       carregados
+          │               │
+       LOADING        ┌────┴────┐
+                      │         │
+                    dados      erro
+                      │         │
+                   SUCCESS    ERROR
+                      │
+                ┌─────┴─────┐
+                │           │
+             produtos     nenhum
+                │          resultado
+                │             │
+             CARDS      EMPTY STATE
+
+Isso é uma evolução importante porque JavaScript deixa de apenas "fazer coisas" e passa a controlar o ciclo de vida da interface.

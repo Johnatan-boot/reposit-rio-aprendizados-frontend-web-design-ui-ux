@@ -1,12 +1,222 @@
+/* =========================================================
+   HERO — VISUAL
+   ========================================================= */
+
 .hero__visual {
     position: relative;
 
-    min-height:
-        clamp(
-            22rem,
-            38vw,
-            34rem
-        );
+    display: flex;
 
-    isolation: isolate;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 30rem;
+}
+
+
+/* =========================================================
+   MAIN PAINT CARD
+   ========================================================= */
+
+.hero__paint-card {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius:
+        var(--radius-xl);
+
+    box-shadow:
+        var(--shadow-lg);
+}
+
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.hero__paint-card--main {
+    width: min(100%, 30rem);
+
+    aspect-ratio: 4 / 5;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--color-celadon),
+            var(--color-frozen-water)
+        );
+}
+
+
+/* =========================================================
+   PAINT CIRCLE
+   ========================================================= */
+
+.hero__paint-circle {
+    position: absolute;
+
+    width: 65%;
+
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background:
+        var(--color-dusty-olive);
+
+    box-shadow:
+        0 2rem 4rem
+        rgb(29 30 24 / 18%);
+
+    transform:
+        translateY(-8%);
+}
+
+
+/* =========================================================
+   PAINT INFORMATION
+   ========================================================= */
+
+.hero__paint-info {
+    position: absolute;
+
+    right: var(--space-5);
+    bottom: var(--space-5);
+    left: var(--space-5);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-1);
+
+    padding: var(--space-4);
+
+    border-radius:
+        var(--radius-md);
+
+    background:
+        rgb(255 255 255 / 88%);
+
+    backdrop-filter:
+        blur(8px);
+}
+
+
+.hero__paint-label {
+    color:
+        var(--color-primary);
+
+    font-size:
+        var(--font-size-xs);
+
+    font-weight:
+        var(--font-weight-bold);
+
+    letter-spacing:
+        0.08em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.hero__paint-info strong {
+    color:
+        var(--color-carbon-black);
+
+    font-size:
+        var(--font-size-lg);
+}
+
+
+/* =========================================================
+   SMALL DECORATIVE CARD
+   ========================================================= */
+
+.hero__paint-card--small {
+    position: absolute;
+
+    right: 0;
+    bottom: 2rem;
+
+    width: 9rem;
+    height: 11rem;
+
+    background:
+        var(--color-celadon-light);
+
+    transform:
+        rotate(7deg);
+
+    z-index: 2;
+}
+
+
+.hero__paint-card--small span {
+    width: 65%;
+
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background:
+        var(--color-dusty-olive);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1023px) {
+
+    .hero__visual {
+        min-height: 26rem;
+    }
+
+    .hero__paint-card--main {
+        width: min(100%, 25rem);
+    }
+
+    .hero__paint-card--small {
+        right: 5%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .hero__visual {
+        width: 100%;
+
+        min-height: 22rem;
+
+        margin-top: var(--space-8);
+    }
+
+
+    .hero__paint-card--main {
+        width: min(78vw, 20rem);
+    }
+
+
+    .hero__paint-card--small {
+        right: 4%;
+
+        bottom: 1rem;
+
+        width: 6rem;
+        height: 7rem;
+    }
 }
