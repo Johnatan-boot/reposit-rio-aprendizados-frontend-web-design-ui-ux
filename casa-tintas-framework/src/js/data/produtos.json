@@ -6,7 +6,7 @@
     "quantidade": 100,
     "preco": 109.9,
     "categoria": "Econômica",
-    "imagem": "/casa-tintas-framework/src/assets/coralar.png"
+    "imagem": "../assets/coralar.png"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "quantidade": 100,
     "preco": 109.9,
     "categoria": "Standard",
-    "imagem": "/casa-tintas-framework/src/assets/super-lavavel.png"
+    "imagem": "../assets/super-lavavel.png"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "quantidade": 50,
     "preco": 189.9,
     "categoria": "Premium",
-    "imagem": "/casa-tintas-framework/src/assets/master-fosco.png"
+    "imagem": "../assets/master-fosco.png"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "quantidade": 45,
     "preco": 219.9,
     "categoria": "Premium",
-    "imagem": "/casa-tintas-framework/src/assets/super-lavavel.png"
+    "imagem": "../assets/super-lavavel.png"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "quantidade": 70,
     "preco": 89.9,
     "categoria": "Premium",
-    "imagem": "/casa-tintas-framework/src/assets/coralit-premium.png"
+    "imagem": "../assets/coralit-premium.png"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "quantidade": 50,
     "preco": 119.9,
     "categoria": "Standard",
-    "imagem": "/casa-tintas-framework/src/assets/grafiato.png"
+    "imagem": "../assets/grafiato.png"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "quantidade": 35,
     "preco": 149.9,
     "categoria": "Premium",
-    "imagem": "/casa-tintas-framework/src/assets/grafiato.png"
+    "imagem": "../assets/grafiato.png"
   },
   {
     "id": 8,
@@ -69,6 +69,6 @@
     "quantidade": 80,
     "preco": 59.9,
     "categoria": "Econômica",
-    "imagem": "/casa-tintas-framework/src/assets/grafiato.png"
+    "imagem": "../assets/grafiato.png"
   }
 ]

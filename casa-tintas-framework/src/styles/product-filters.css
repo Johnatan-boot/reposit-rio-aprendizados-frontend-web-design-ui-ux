@@ -1,0 +1,91 @@
+/* =========================================================
+   PRODUCT FILTERS
+   ========================================================= */
+
+.product-filters {
+    margin-bottom: 2rem;
+}
+
+
+.product-filters__group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+
+.filter-button {
+    border: 1px solid var(--color-dusty-olive);
+
+    background: transparent;
+
+    color: var(--color-carbon-black);
+
+    padding:
+        0.65rem
+        1rem;
+
+    border-radius:
+        999px;
+
+    cursor: pointer;
+
+    font: inherit;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.filter-button:hover {
+    background-color:
+        var(--color-celadon);
+}
+
+
+.filter-button:focus-visible {
+    outline:
+        3px solid
+        var(--color-dusty-olive);
+
+    outline-offset:
+        3px;
+}
+
+
+.filter-button--active {
+    background-color:
+        var(--color-dusty-olive);
+
+    color:
+        white;
+
+    border-color:
+        var(--color-dusty-olive);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .product-filters__group {
+        overflow-x: auto;
+
+        flex-wrap: nowrap;
+
+        padding-bottom:
+            0.5rem;
+    }
+
+
+    .filter-button {
+        flex:
+            0 0 auto;
+    }
+
+}

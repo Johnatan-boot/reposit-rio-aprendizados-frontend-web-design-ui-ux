@@ -1,0 +1,267 @@
+/* =========================================================
+   DESIGN TOKENS - CASA DE TINTAS
+   ========================================================= */
+
+:root {
+    /* =========================================================
+   LAYOUT — ESPAÇAMENTO LATERAL
+   ========================================================= */
+
+      --page-gutter: 1rem;
+
+      --page-gutter-tablet: 1.5rem;
+
+      --page-gutter-desktop: 2rem;
+
+    /* =====================================================
+       CORES
+       ===================================================== */
+
+    --color-carbon-black: #1d1e18;
+
+    --color-dusty-olive: #6b8f71;
+
+    --color-celadon: #aad2ba;
+
+    --color-frozen-water: #d9fff5;
+
+    --color-celadon-light: #b9f5d8;
+
+    --color-white: #ffffff;
+
+    --color-gray-light: #f4f6f4;
+
+    --color-gray-medium: #8c928e;
+
+
+    /* =====================================================
+       CORES SEMÂNTICAS
+       ===================================================== */
+
+    --color-primary: var(--color-dusty-olive);
+
+    --color-primary-hover: #57755b;
+
+    --color-background: var(--color-frozen-water);
+
+    --color-surface: var(--color-white);
+
+    --color-text-main: var(--color-carbon-black);
+
+    --color-text-muted: var(--color-gray-medium);
+
+    /* aliases utilizados pelo UX */
+    --color-text: var(--color-text-main);
+
+    --color-text-secondary: var(--color-text-muted);
+
+    --color-border: #d7ded9;
+
+    --color-celadon-2: var(--color-celadon-light);
+
+
+
+
+    /*== PALETA COMPLEMENTAR =======================================================*/
+    --color-terracotta: #c8755a;
+   --color-warm-sand: #e8d8bd;
+   --color-muted-coral: #d98f7a;
+   --color-deep-navy: #263746;
+   --color-soft-lavender: #c9c4dc;
+
+
+   /* =========================================================
+   CORES DE INTERAÇÃO
+   ========================================================= */
+
+--color-primary: var(--color-dusty-olive);
+
+--color-primary-hover: #57755b;
+
+--color-primary-active: #435c47;
+
+--color-focus: var(--color-celadon);
+
+--color-border: #dfe5e1;
+
+--color-text: var(--color-carbon-black);
+
+--color-text-secondary: #59605b;
+
+  
+    /* =====================================================
+       TIPOGRAFIA
+       ===================================================== */
+
+    --font-sans:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    --font-size-xs: 0.75rem;
+
+    --font-size-sm: 0.875rem;
+
+    --font-size-base: 1rem;
+
+
+    --font-size-lg: 1.125rem;
+
+    --font-size-xl: 1.5rem;
+
+    --font-size-2xl: 2rem;
+
+    --font-size-3xl: 3rem;
+
+
+    /* pesos */
+
+    --font-weight-medium: 500;
+
+    --font-weight-semibold: 600;
+
+    --font-weight-bold: 700;
+
+    --font-weight-extrabold: 800;
+
+
+    /* alturas */
+
+    --line-height-tight: 1.1;
+
+    --line-height-normal: 1.5;
+
+    --line-height-relaxed: 1.7;
+
+
+    /* =====================================================
+       ESPAÇAMENTO
+       ===================================================== */
+
+    --space-1: 0.25rem;
+
+    --space-2: 0.5rem;
+
+    --space-3: 0.75rem;
+
+    --space-4: 1rem;
+
+    --space-5: 1.25rem;
+
+    --space-6: 1.5rem;
+
+    --space-8: 2rem;
+
+    --space-10: 2.5rem;
+
+    --space-12: 3rem;
+
+    --space-16: 4rem;
+
+
+    /* =====================================================
+   CONTAINERS
+   ===================================================== */
+
+   --container-xl: 80rem;
+
+ 
+
+
+    /* =====================================================
+       BORDAS
+       ===================================================== */
+
+    --border-width-thin: 1px;
+
+
+    /* =====================================================
+       RADIUS
+       ===================================================== */
+
+    --radius-sm: 0.25rem;
+
+    --radius-md: 0.5rem;
+
+    --radius-lg: 1rem;
+
+    --radius-xl: 1.25rem;
+
+    --radius-full: 9999px;
+
+
+    /* aliases utilizados pelo UX */
+
+    --border-radius-sm: var(--radius-sm);
+
+    --border-radius-md: var(--radius-md);
+
+    --border-radius-lg: var(--radius-lg);
+
+    --border-radius-xl: var(--radius-xl);
+
+    --border-radius-full: var(--radius-full);
+
+
+    /* =====================================================
+       SOMBRAS
+       ===================================================== */
+
+    --shadow-sm:
+        0 1px 2px rgba(29, 30, 24, 0.05);
+
+    --shadow-md:
+        0 4px 6px -1px rgba(29, 30, 24, 0.1),
+        0 2px 4px -1px rgba(29, 30, 24, 0.06);
+
+    --shadow-lg:
+        0 10px 15px -3px rgba(29, 30, 24, 0.1),
+        0 4px 6px -2px rgba(29, 30, 24, 0.05);
+
+    --shadow-xl:
+        0 20px 30px -8px rgba(29, 30, 24, 0.18);
+
+
+    /* =====================================================
+       GRADIENTES
+       ===================================================== */
+
+    --gradient-soft:
+        linear-gradient(
+            135deg,
+            var(--color-frozen-water),
+            var(--color-celadon)
+        );
+
+
+    /* =====================================================
+       Z-INDEX
+       ===================================================== */
+
+    --z-tooltip: 1000;
+
+
+    /* =====================================================
+       TRANSIÇÕES
+       ===================================================== */
+
+    --transition-fast: 150ms ease;
+
+    --transition-normal: 250ms ease;
+
+
+   /* =========================================================
+   ESTADOS DE INTERAÇÃO
+   ========================================================= */
+
+--color-focus: var(--color-celadon);
+
+--focus-width: 3px;
+
+--focus-offset: 4px;
+}

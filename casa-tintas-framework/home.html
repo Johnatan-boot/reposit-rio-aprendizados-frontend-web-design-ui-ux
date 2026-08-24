@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Casa de Tintas — tintas, cores e soluções para transformar seus ambientes."
+    />
+    <meta name="theme-color" content="#1d1e18" />
+
+    <title>Casa de Tintas | Sua casa. Sua cor.</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="stylesheet" href="./src/styles/tokens.css" />
+    <link rel="stylesheet" href="./src/styles/base.css" />
+    <link rel="stylesheet" href="./src/styles/ux.css" />
+    <link rel="stylesheet" href="./src/styles/states-components.css" />
+    <link rel="stylesheet" href="./src/styles/media.css" />
+    <link rel="stylesheet" href="./src/styles/hero-content.css" />
+    <link rel="stylesheet" href="./src/styles/hero__visual.css" />
+    <link rel="stylesheet" href="./src/styles/category-grid.css" />
+    <link rel="stylesheet" href="./src/styles/product-grid.css" />
+    <link rel="stylesheet" href="./src/styles/inspiration-grid.css" />
+    <link rel="stylesheet" href="./src/styles/inspiration-card.css" />
+    <link rel="stylesheet" href="./src/styles/product-card.css" />
+    <link rel="stylesheet" href="./src/styles/category-card.css" />
+    <link rel="stylesheet" href="./src/styles/elements-click.css" />
+    <link rel="stylesheet" href="./src/styles/cart.css" />
+    <link rel="stylesheet" href="./src/styles/product-filters.css" />
+    <link rel="stylesheet" href="./src/styles/product-filters.css" />
+    <link rel="stylesheet" href="./src/styles/animation.css" />
+  </head>
+  <body>
+    <!-- =====================================================
+         ACESSIBILIDADE
+         ===================================================== -->
+    <a class="skip-link" href="#main-content">
+      Pular para o conteúdo principal
+    </a>
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+    <site-header></site-header>
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+    <main id="main-content">
+      <!-- HERO -->
+      <!-- =========================================================
+     HERO — APRESENTAÇÃO PRINCIPAL
+     ========================================================= -->
+
+      <section class="hero" id="inicio">
+        <div class="container hero__inner">
+          <!-- =====================================================
+         HERO CONTENT
+         ===================================================== -->
+
+          <div class="hero__content">
+            <p class="eyebrow">Casa de Tintas</p>
+
+            <h1>A cor certa para transformar o seu espaço.</h1>
+
+            <p class="hero__description">
+              Encontre tintas, cores e soluções para deixar sua casa do jeito
+              que você imaginou.
+            </p>
+
+            <div class="hero__actions">
+              <a class="button button--primary" href="#produtos">
+                Ver produtos
+              </a>
+
+              <a class="button button--secondary" href="#cores">
+                Explorar cores
+              </a>
+            </div>
+          </div>
+
+          <!-- =====================================================
+         HERO VISUAL
+         ===================================================== -->
+
+          <div class="hero__visual">
+            <div
+              class="hero__paint-card hero__paint-card--main"
+              aria-hidden="true"
+            >
+              <span class="hero__paint-circle"></span>
+
+              <div class="hero__paint-info">
+                <span class="hero__paint-label"> Sua próxima cor </span>
+
+                <strong> Começa aqui </strong>
+              </div>
+            </div>
+
+            <div
+              class="hero__paint-card hero__paint-card--small"
+              aria-hidden="true"
+            >
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CATEGORIAS -->
+      <section
+        id="categorias"
+        class="section"
+        aria-labelledby="categorias-title"
+      >
+        <div class="container">
+          <header class="section-header">
+            <p class="eyebrow">ENCONTRE O QUE PRECISA</p>
+            <h2 id="categorias-title">Compre por categoria</h2>
+            <p>Soluções para todos os tipos de projetos.</p>
+          </header>
+
+          <div class="category-grid">
+            <category-card
+              imagem="./src/assets/interno-casa.png"
+              titulo="Tintas para interior"
+              descricao="Para salas, quartos e ambientes internos."
+              link="#produtos"
+            ></category-card>
+
+            <category-card
+              imagem="./src/assets/exterior-casa.jpg"
+              titulo="Tintas para exterior"
+              descricao="Proteção e beleza para áreas externas."
+              link="#produtos"
+            ></category-card>
+
+            <category-card
+              imagem="./src/assets/pintando-portao.jpg"
+              titulo="Esmaltes"
+              descricao="Acabamentos para madeira e metal."
+              link="#produtos"
+            ></category-card>
+
+            <category-card
+              imagem="./src/assets/grafiato-textura.jpg"
+              titulo="Texturas"
+              descricao="Personalidade e acabamento para paredes."
+              link="#produtos"
+            ></category-card>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUTOS -->
+      <product-card></product-card>
+      <section
+        id="produtos"
+        class="section section--surface"
+        aria-labelledby="produtos-title"
+      >
+        <div class="container">
+          <header class="section-header section-header--row">
+            <div>
+              <p class="eyebrow">MAIS PROCURADOS</p>
+              <h2 id="produtos-title">Nossos destaques</h2>
+            </div>
+            <a href="#" class="text-link">Ver todos os produtos →</a>
+          </header>
+          <div class="product-filters" aria-label="Filtros de produtos"></div>
+          <product-grid></product-grid>
+        </div>
+      </section>
+
+      <!-- CORES -->
+      <section id="cores" class="color-section" aria-labelledby="cores-title">
+        <div class="container color-section__content">
+          <div>
+            <p class="eyebrow">EXPRESSE SUA PERSONALIDADE</p>
+            <h2 id="cores-title">Qual cor combina com você?</h2>
+            <p>
+              Descubra combinações e encontre a tonalidade ideal para o seu
+              ambiente.
+            </p>
+            <a href="#" class="button button--light">Explorar cores</a>
+          </div>
+
+          <color-palette></color-palette>
+        </div>
+      </section>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="inspiracoes"
+        aria-labelledby="inspiracoes-title"
+      >
+        <div class="container">
+          <header class="section-header section-header--row">
+            <div>
+              <p class="eyebrow">INSPIRAÇÃO</p>
+
+              <h2 id="inspiracoes-title">Ideias para transformar sua casa.</h2>
+
+              <p>
+                Descubra combinações de cores e ambientes para encontrar
+                inspiração para seu próximo projeto.
+              </p>
+            </div>
+
+            <a href="#produtos" class="text-link"> Ver produtos </a>
+          </header>
+
+       <div class="inspiration-grid">
+
+    <inspiration-card
+        imagem="./src/assets/sala-de-estar.jpg"
+        alt="Sala de estar decorada com tons naturais"
+        titulo="Sala de estar"
+        descricao="Tons naturais para criar um ambiente confortável e sofisticado."
+        link="#produtos"
+        acao="Explorar cores"
+        tamanho="inspiration-card--large"
+    ></inspiration-card>
+
+
+    <inspiration-card
+        imagem="./src/assets/Cozinha.jpg"
+        alt="Cozinha moderna com cores claras"
+        titulo="Cozinha"
+        descricao="Cores que deixam o ambiente mais leve."
+        link="#produtos"
+        acao="Ver inspiração"
+    ></inspiration-card>
+
+
+    <inspiration-card
+        imagem="./src/assets/Quarto.jpg"
+        alt="Quarto decorado com cores suaves"
+        titulo="Quarto"
+        descricao="Tons suaves para criar uma atmosfera tranquila."
+        link="#produtos"
+        acao="Ver inspiração"
+    ></inspiration-card>
+
+</div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section id="contato" class="cta" aria-labelledby="cta-title">
+        <div class="container cta__content">
+          <div>
+            <p class="eyebrow">PRECISA DE AJUDA?</p>
+            <h2 id="cta-title">Não sabe qual tinta escolher?</h2>
+            <p>
+              Fale com nossos especialistas. Nós ajudamos você a encontrar o
+              produto ideal para o seu projeto.
+            </p>
+          </div>
+          <a
+            href="https://wa.me/5511999999999"
+            class="button button--light"
+            target="_blank"
+            rel="noopener"
+          >
+            Falar com especialista
+            <span class="sr-only">(abre em nova janela)</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+  <site-footer></site-footer>
+    <script src="./src/js/navigation.js" defer></script>
+
+    <script type="module" src="./src/components/Header/Header.js"></script>
+    <script
+      type="module"
+      src="./src/components/ProductCard/ProductCard.js"
+    ></script>
+    <script
+      type="module"
+      src="./src/components/ProductGrid/ProductGrid.js"
+    ></script>
+    <script
+      type="module"
+      src="./src/components/CategoryCard/CategoryCard.js"
+    ></script>
+    <script type="module" src="./src/components/InspirationCard/InspirationCard.js"></script>
+     
+    <script
+    type="module"
+    src="./src/components/ColorPalette/ColorPalette.js"
+></script>
+
+<script
+    type="module"
+    src="./src/components/Footer/Footer.js"
+></script>
+    <script type="module" src="./src/js/app.js"></script>
+    <script type="module" src="./src/js/search.js"></script>
+    <script type="module" src="./src/js/filter.js"></script>
+    <script type="module" src="./src/js/components/cart.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "nome": "Marcio Silva",
+    "cpf": "123.456.789-00",
+    "profissao": "Colorista",
+    "cargaHoraria": "44 horas semanais",
+    "salario": 2500.00,
+    "categorias": [
+      "Residencial",
+      "Industrial",
+      "Moveleiro",
+      "Automotivo"
+    ]
+  },
+  {
+    "id": 2,
+    "nome": "Ana Souza",
+    "cpf": "987.654.321-00",
+    "profissao": "Vendedora",
+    "cargaHoraria": "44 horas semanais",
+    "salario": 2300.00,
+    "categorias": [
+      "Residencial",
+      "Moveleiro"
+    ]
+  }
+]

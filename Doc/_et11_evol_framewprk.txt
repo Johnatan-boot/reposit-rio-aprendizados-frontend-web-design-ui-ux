@@ -1,0 +1,505 @@
+ETAPA 11: transformação do projeto em aplicação moderna.
+
+A ideia seria:
+
+CASA DE TINTAS
+│
+├── Fase 1 — HTML semântico
+├── Fase 2 — CSS
+├── Fase 3 — Design System
+├── Fase 4 — UI/UX
+├── Fase 5 — Responsividade
+├── Fase 6 — JavaScript
+│
+└── Fase 7 — Arquitetura moderna
+      │
+      ├── Vite
+      ├── React
+      ├── TypeScript
+      ├── Componentes
+      ├── Design Tokens
+      ├── Web Components
+      ├── Estado
+      ├── Rotas
+      ├── APIs
+      └── Arquitetura reutilizável
+
+E tem uma coisa importante:
+
+eu não colocaria React, TypeScript, Babel, Web Components e várias bibliotecas de uma vez.
+
+Isso faria você perder justamente o aprendizado.
+
+Vamos construir do zero, entendendo por que cada peça existe.
+
+Eu começaria criando um "Projeto 0"
+
+Em vez de pegar imediatamente todas as páginas da Casa de Tintas, criaria algo como:
+
+casa-tintas-framework/
+
+E começaria com uma única página:
+
+index.html
+
+Só que essa página seria propositalmente pequena.
+
+Por exemplo:
+
+App
+│
+├── Header
+├── Hero
+├── CategoryCard
+├── ProductCard
+├── Button
+└── Footer
+
+Aí começamos a fazer a transformação.
+
+Etapa 1 — HTML puro
+
+Primeiro:
+
+index.html
+
+com HTML semântico.
+
+Nada de React.
+
+Nada de TypeScript.
+
+Nada de Babel.
+
+Nada de biblioteca.
+
+A ideia é você perceber:
+
+"Eu tenho uma interface."
+
+Etapa 2 — transformar partes em componentes
+
+Aqui começa a mudança de mentalidade.
+
+Hoje provavelmente temos algo assim:
+
+<article class="product-card">
+    <img src="..." alt="Tinta">
+    <h3>Tinta Acrílica</h3>
+    <p>R$ 89,90</p>
+    <button>Comprar</button>
+</article>
+
+Mas imagine que temos 50 produtos.
+
+Não queremos:
+
+<article>...</article>
+<article>...</article>
+<article>...</article>
+<article>...</article>
+
+Queremos pensar:
+
+ProductCard
+
+como uma unidade reutilizável.
+
+Etapa 3 — JavaScript
+
+Aí criamos dados:
+
+const products = [
+    {
+        name: "Tinta Acrílica",
+        price: 89.90,
+        image: "...",
+        category: "Interior"
+    },
+    {
+        name: "Esmalte Premium",
+        price: 119.90,
+        image: "...",
+        category: "Esmaltes"
+    }
+];
+
+E começamos a gerar os componentes.
+
+Aqui você vai aprender uma coisa MUITO importante:
+
+separar dados de apresentação.
+
+Isso vai ser fundamental quando chegarmos ao React.
+
+Etapa 4 — Web Components
+
+Aqui eu quero fazer uma parada interessante.
+
+Antes de React, podemos experimentar:
+
+<product-card></product-card>
+
+ou:
+
+<category-card></category-card>
+
+E no JavaScript:
+
+class ProductCard extends HTMLElement {
+
+}
+
+Depois:
+
+customElements.define(
+    "product-card",
+    ProductCard
+);
+
+Isso vai te ensinar na prática o conceito de componente reutilizável nativo da Web.
+
+E você vai entender uma coisa que muita gente aprende de forma superficial:
+
+React não inventou componentes.
+
+Componentização já é um conceito fundamental da Web.
+
+Etapa 5 — Design System
+
+Aqui entra tudo que construímos.
+
+Hoje temos coisas como:
+
+tokens.css
+ux.css
+base.css
+media.css
+product-card.css
+category-card.css
+hero.css
+
+Nós vamos começar a organizar isso de maneira mais profissional.
+
+Por exemplo:
+
+src/
+│
+├── styles/
+│   ├── tokens.css
+│   ├── reset.css
+│   ├── globals.css
+│   └── utilities.css
+│
+├── components/
+│   ├── Button/
+│   ├── Card/
+│   ├── ProductCard/
+│   ├── CategoryCard/
+│   ├── Header/
+│   └── Footer/
+│
+└── pages/
+    ├── Home/
+    ├── Interior/
+    ├── Exterior/
+    └── Esmaltes/
+
+Isso já começa a parecer uma aplicação de verdade.
+
+Etapa 6 — Vite
+
+Só depois disso eu colocaria Vite.
+
+Porque quero que você entenda o que o Vite está resolvendo.
+
+A partir daí:
+
+index.html
+src/
+package.json
+vite.config
+
+E começamos a trabalhar com módulos:
+
+import { ProductCard } from "./components/ProductCard.js";
+
+Isso já é uma evolução enorme em relação ao nosso HTML inicial.
+
+Etapa 7 — TypeScript
+
+Depois colocamos TypeScript.
+
+Aí nossos produtos deixam de ser simplesmente objetos soltos:
+
+const product = {
+    name: "...",
+    price: 89.90
+};
+
+e passam a ter um contrato:
+
+interface Product {
+    id: number;
+    name: string;
+    price: number;
+    image: string;
+    category: string;
+}
+
+Isso começa a preparar o projeto para crescer.
+
+Etapa 8 — React
+
+Aí sim eu colocaria React.
+
+E você vai perceber que muita coisa que fizemos anteriormente continua existindo.
+
+Por exemplo:
+
+ProductCard
+
+vira:
+
+<ProductCard product={product} />
+
+E:
+
+Header
+
+vira:
+
+<Header />
+
+E:
+
+CategoryCard
+
+vira:
+
+<CategoryCard category={category} />
+
+A diferença é que agora o React passa a cuidar da composição e atualização da interface.
+
+E Babel?
+
+Aqui eu faria uma mudança na sua ideia.
+
+Não começaria instalando Babel manualmente.
+
+Com Vite + React + TypeScript, a ferramenta já resolve boa parte da transformação do código para você.
+
+Então, para nosso projeto educacional, eu prefiro:
+
+Vite
++
+React
++
+TypeScript
+
+e depois adicionamos outras ferramentas somente quando existir uma necessidade real.
+
+Isso é muito mais próximo de como eu quero que você aprenda arquitetura moderna.
+
+E o mais importante: não vamos jogar fora a Casa de Tintas
+
+Esse é o ponto que eu acho mais legal.
+
+Podemos transformar a Casa de Tintas em nosso projeto de evolução.
+
+Por exemplo:
+
+Hoje
+HTML
+ ↓
+CSS
+ ↓
+Design System
+ ↓
+JavaScript
+Próximo estágio
+HTML
+ ↓
+Web Components
+ ↓
+Vite
+ ↓
+TypeScript
+Depois
+React
+ ↓
+Componentes
+ ↓
+Props
+ ↓
+State
+ ↓
+Hooks
+ ↓
+React Router
+Depois
+Design System
+ ↓
+Component Library
+ ↓
+Storybook
+Depois
+Frontend
+ ↓
+API
+ ↓
+Backend
+ ↓
+MySQL
+
+E aí a Casa de Tintas deixa de ser apenas um site.
+
+Ela vira uma aplicação completa.
+
+E podemos criar uma "página de laboratório"
+
+Essa sua ideia foi excelente.
+
+Eu criaria uma página:
+
+/laboratorio
+
+ou até:
+
+/playground
+
+Nela vamos experimentar:
+
+JavaScript
+├── DOM
+├── Events
+├── Modules
+├── Fetch
+├── Async/Await
+├── LocalStorage
+└── Web Components
+
+TypeScript
+├── Types
+├── Interfaces
+├── Generics
+├── Enums
+└── Utility Types
+
+React
+├── Components
+├── Props
+├── State
+├── Hooks
+├── Context
+└── Forms
+
+Assim você não precisa ficar criando 30 páginas completas para aprender cada conceito.
+
+A página funciona como nosso laboratório.
+
+E eu iria ainda mais longe
+
+Nós podemos estabelecer uma regra para o projeto:
+
+Toda funcionalidade nova primeiro nasce no laboratório. Depois que entendermos, ela vira componente oficial do projeto.
+
+Por exemplo:
+
+LABORATÓRIO
+
+<button>
+    ↓
+entendemos
+    ↓
+Button
+    ↓
+componente oficial
+
+Outro:
+
+card de produto
+    ↓
+testamos
+    ↓
+ProductCard
+    ↓
+Design System
+
+Outro:
+
+modal
+    ↓
+experimentamos
+    ↓
+Modal
+    ↓
+componente reutilizável
+
+Isso vai evitar aquela situação que você comentou:
+
+"Cara, vai ficar complexo ficar construindo todas as páginas."
+
+Exatamente. Não vamos fazer isso.
+
+Vamos construir o sistema que constrói as páginas.
+
+Minha sugestão para o nosso próximo passo
+
+Eu faria agora uma ETAPA 11 — Projeto 0: Arquitetura Frontend.
+
+E começaríamos literalmente do zero, sem React inicialmente:
+
+casa-tintas-framework/
+│
+├── index.html
+├── src/
+│   ├── css/
+│   ├── js/
+│   ├── components/
+│   └── data/
+│
+└── README.md
+
+Primeiro transformamos um único index.html em uma pequena aplicação modular.
+
+Depois:
+
+HTML → JavaScript modular → Web Components → Vite → TypeScript → React.
+
+Eu posso ir te dizendo o que criar, onde criar, qual comando executar e principalmente POR QUE estamos fazendo cada mudança.
+
+
+HOME
+│
+├── Accessibility
+│
+├── Header
+│   ├── Topbar
+│   ├── Navbar
+│   │   ├── Brand
+│   │   ├── MainNavigation
+│   │   └── Actions
+│   │       ├── Search
+│   │       ├── Cart
+│   │       └── MobileMenu
+│   │
+│   └── SearchContainer
+│
+├── Main
+│   ├── Hero
+│   ├── Categories
+│   │   └── CategoryCard
+│   │
+│   ├── Products
+│   │   ├── ProductFilters
+│   │   └── ProductGrid
+│   │       └── ProductCard
+│   │
+│   ├── Colors
+│   ├── Inspirations
+│   │   └── InspirationCard
+│   │
+│   └── CTA
+│
+└── Footer

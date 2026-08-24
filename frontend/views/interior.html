@@ -220,7 +220,7 @@
          HERO VISUAL
          ===================================================== -->
 
-         <div class="hero__visual hero__visual-interior">
+          <div class="hero__visual hero__visual-interior">
             <div
               class="hero__paint-card hero__paint-card--main"
               aria-hidden="true"
@@ -253,58 +253,12 @@
         <div class="container">
           <header class="section-header">
             <p class="eyebrow">ENCONTRE O QUE PRECISA</p>
-            <h2 id="categorias-title">Compre por categoria</h2>
+            <h2 id="categorias-title">Tintas para o Interior de sua Casa</h2>
             <p>Soluções para todos os tipos de projetos.</p>
           </header>
 
-          <div class="category-grid">
-            <a class="category-card" href="#">
-              <!---
-                        <span class="category-card__icon" aria-hidden="true">🏠</span>
-                        
-                        -->
-              <img
-                src="../assets/interno-casa.png"
-                alt="Tintas para interior"
-              />
-              <h3>Tintas para interior</h3>
-              <p>Para salas, quartos e ambientes internos.</p>
-              <span class="category-card__link">Ver produtos →</span>
-            </a>
-
-            <a class="category-card" href="#">
-              <img
-                src="../assets/exterior-casa.jpg"
-                alt="Tintas para exterior"
-              />
-
-              <h3>Tintas para exterior</h3>
-              <p>Proteção e beleza para áreas externas.</p>
-              <span class="category-card__link">Ver produtos →</span>
-            </a>
-
-            <a class="category-card" href="#">
-              <img
-                src="../assets/pintando-portao.jpg"
-                alt="esmaltes para madeira e metal"
-              />
-
-              <h3>Esmaltes</h3>
-              <p>Acabamentos para madeira e metal.</p>
-              <span class="category-card__link">Ver produtos →</span>
-            </a>
-
-            <a class="category-card" href="#">
-              <img
-                src="../assets/grafiato-textura.jpg"
-                alt="grafiatos e texturas para paredes"
-              />
-
-              <h3>Texturas</h3>
-              <p>Personalidade e acabamento para paredes.</p>
-              <span class="category-card__link">Ver produtos →</span>
-            </a>
-          </div>
+          <!-- O script vai injetar os cards aqui automaticamente -->
+          <div class="category-grid"></div>
         </div>
       </section>
 
@@ -323,6 +277,8 @@
             <a href="#" class="text-link">Ver todos os produtos →</a>
           </header>
           <div class="product-filters" aria-label="Filtros de produtos"></div>
+
+          <!-- O script vai injetar os produtos em destaque aqui automaticamente -->
           <div class="product-grid"></div>
         </div>
       </section>
@@ -340,15 +296,13 @@
             <a href="#" class="button button--light">Explorar cores</a>
           </div>
 
-      <div class="color-palette">
-
-    <span style="--swatch: #256eff;"></span>
-    <span style="--swatch: #46237a;"></span>
-    <span style="--swatch: #3ddc97;"></span>
-    <span style="--swatch: #fcfcfc;"></span>
-    <span style="--swatch: #ff495c;"></span>
-
-</div>
+          <div class="color-palette">
+            <span style="--swatch: #256eff"></span>
+            <span style="--swatch: #46237a"></span>
+            <span style="--swatch: #3ddc97"></span>
+            <span style="--swatch: #fcfcfc"></span>
+            <span style="--swatch: #ff495c"></span>
+          </div>
         </div>
       </section>
 
@@ -531,5 +485,10 @@
     <script type="module" src="../js/app.js"></script>
     <script type="module" src="/frontend/js/search.js"></script>
     <script type="module" src="/frontend/js/filter.js"></script>
+    <!-- Novo script de renderização da página de interior -->
+    <script type="module">
+      import { initInteriorPage } from '../js/interior-renderer.js';
+      document.addEventListener('DOMContentLoaded', initInteriorPage);
+    </script>
   </body>
 </html>

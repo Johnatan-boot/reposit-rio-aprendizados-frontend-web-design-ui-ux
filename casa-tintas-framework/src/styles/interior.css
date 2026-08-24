@@ -1,0 +1,69 @@
+/* =========================================================
+   CORES — INTERIOR
+   ========================================================= */
+
+:root {
+
+    --color-digital-blue: #256eff;
+    --color-indigo-velvet: #46237a;
+    --color-emerald: #3ddc97;
+    --color-white: #fcfcfc;
+    --color-hot-fuchsia: #ff495c;
+
+
+    /* -----------------------------------------------------
+       CORES SEMÂNTICAS
+       ----------------------------------------------------- */
+
+    --color-primary:
+        var(--color-digital-blue);
+
+    --color-primary-hover:
+        #1558d6;
+
+    --color-secondary:
+        var(--color-indigo-velvet);
+
+    --color-accent:
+        var(--color-emerald);
+
+    --color-background:
+        var(--color-white);
+
+    --color-surface:
+        #ffffff;
+
+    --color-text:
+        var(--color-indigo-velvet);
+
+    --color-text-main:
+        var(--color-indigo-velvet);
+
+    --color-text-secondary:
+        #5f5f6b;
+
+    --color-text-muted:
+        #777783;
+
+    --color-border:
+        rgb(70 35 122 / 12%);
+
+    --color-focus:
+        var(--color-digital-blue);
+
+
+    /* -----------------------------------------------------
+       GRADIENTE
+       ----------------------------------------------------- */
+
+    --gradient-soft:
+        linear-gradient(
+            135deg,
+            var(--color-digital-blue),
+            var(--color-indigo-velvet)
+        );
+}
+
+
+
+

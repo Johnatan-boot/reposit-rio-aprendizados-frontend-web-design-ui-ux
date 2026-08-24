@@ -1,0 +1,43 @@
+{
+  "categorias": [
+    {
+      "id": "interior",
+      "titulo": "Tintas para interior",
+      "descricao": "Para salas, quartos e ambientes internos.",
+      "imagem": "../assets/interno-casa.png",
+      "alt": "Tintas para interior",
+      "link": "#produtos"
+    }
+   
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Tinta Acrílica Fosco Coral R.M",
+      "categoria": "interior",
+      "preco": 189.90,
+      "imagem": "../assets/super-lavavel.png",
+      "alt": "Tinta Acrílica Fosco Coral R.M",
+      "descricao": "Excelente cobertura, baixo respingamento e acabamento sofisticado."
+    },
+    {
+      "id": 2,
+      "nome": "Tinta Acrílica Coralar",
+      "categoria": "interior",
+      "preco": 219.90,
+      "imagem": "../assets/coralar.png",
+      "alt": "Tinta Acrílica Coralar",
+      "descricao": "Toque sedoso e fácil limpeza, ideal para quartos e salas."
+    },
+    {
+      "id": 3,
+      "nome": "Tinta Super Lavável",
+      "categoria": "interior",
+      "preco": 249.90,
+      "imagem": "../assets/super-lavavel.png",
+      "alt": "Tinta Super Lavável",
+      "descricao": "Repele líquidos e resiste à limpeza sem perder a cor."
+    }
+   
+  ]
+}

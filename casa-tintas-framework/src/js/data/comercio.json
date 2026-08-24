@@ -1,0 +1,14 @@
+{
+  "id": 1,
+  "nome": "Casa de Tintas Aquarela",
+  "comercio": "Loja de Tintas",
+  "expediente": "Segunda a Sexta: 8h às 18h",
+  "ceo": "Johnatan Santos",
+  "cnpj": "12.345.678/0001-90",
+  "categorias": [
+    "Residencial",
+    "Industrial",
+    "Moveleiro",
+    "Automotivo"
+  ]
+}

@@ -1,0 +1,92 @@
+// =========================================================
+// PRODUCT GRID — WEB COMPONENT
+// =========================================================
+
+class ProductGrid extends HTMLElement {
+
+    constructor() {
+        super();
+
+        this.produtos = [];
+    }
+
+    // =====================================================
+    // COMPONENTE ENTROU NO DOM
+    // =====================================================
+
+    connectedCallback() {
+        this.render();
+    }
+
+    // =====================================================
+    // RECEBER PRODUTOS
+    // =====================================================
+
+    set data(produtos) {
+
+        this.produtos = Array.isArray(produtos)
+            ? produtos
+            : [];
+
+        this.render();
+    }
+
+    // =====================================================
+    // OBTER PRODUTOS
+    // =====================================================
+
+    get data() {
+        return this.produtos;
+    }
+
+    // =====================================================
+    // RENDERIZAR
+    // =====================================================
+
+    render() {
+
+        this.innerHTML = "";
+
+        // =================================================
+        // NENHUM PRODUTO
+        // =================================================
+
+        if (this.produtos.length === 0) {
+
+            this.innerHTML = `
+                <p>
+                    Nenhum produto encontrado.
+                </p>
+            `;
+
+            return;
+        }
+
+        // =================================================
+        // CRIAR PRODUCT CARDS
+        // =================================================
+
+        this.produtos.forEach(
+            (produto) => {
+
+                const card =
+                    document.createElement(
+                        "product-card"
+                    );
+
+                card.data = produto;
+
+                this.appendChild(card);
+            }
+        );
+    }
+}
+
+// =========================================================
+// REGISTRAR WEB COMPONENT
+// =========================================================
+
+customElements.define(
+    "product-grid",
+    ProductGrid
+);

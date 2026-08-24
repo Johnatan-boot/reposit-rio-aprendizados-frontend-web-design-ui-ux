@@ -1,0 +1,189 @@
+/* =========================================================
+   ELEMENTOS INTERATIVOS — UI / UX
+   ========================================================= */
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+    transition:
+        color var(--transition-fast),
+        opacity var(--transition-fast);
+}
+
+
+/* =========================================================
+   CARDS INTERATIVOS
+   ========================================================= */
+
+/*
+ * Somente elementos que possuem comportamento
+ * interativo devem apresentar cursor de ação.
+ */
+
+.category-card,
+.inspiration-card {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CATEGORY CARD
+   ========================================================= */
+
+.category-card {
+    position: relative;
+}
+
+.category-card:hover {
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--color-primary);
+
+    box-shadow:
+        var(--shadow-lg);
+}
+
+.category-card:focus-within {
+    border-color:
+        var(--color-primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgb(107 143 113 / 20%);
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+   ========================================================= */
+
+.product-card {
+    position: relative;
+}
+
+.product-card:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        var(--shadow-lg);
+}
+
+.product-card:focus-within {
+    box-shadow:
+        0 0 0 3px
+        rgb(107 143 113 / 20%);
+}
+
+
+/* =========================================================
+   INSPIRATION CARD
+   ========================================================= */
+
+.inspiration-card {
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal),
+        border-color var(--transition-normal);
+}
+
+.inspiration-card:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        var(--color-primary);
+
+    box-shadow:
+        var(--shadow-lg);
+}
+
+.inspiration-card:focus-within {
+    border-color:
+        var(--color-primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgb(107 143 113 / 20%);
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.button,
+.icon-button,
+.menu-button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   TEXT LINKS
+   ========================================================= */
+
+.text-link {
+    position: relative;
+
+    text-decoration:
+        none;
+}
+
+.text-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -3px;
+
+    width: 100%;
+    height: 2px;
+
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        left;
+
+    background:
+        currentColor;
+
+    transition:
+        transform var(--transition-fast);
+}
+
+.text-link:hover::after,
+.text-link:focus-visible::after {
+    transform:
+        scaleX(1);
+}
+
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+    }
+}
