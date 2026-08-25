@@ -30,6 +30,11 @@
     <link rel="stylesheet" href="./src/styles/cart.css" />
     <link rel="stylesheet" href="./src/styles/product-filters.css" />
     <link rel="stylesheet" href="./src/styles/animation.css" />
+    <link rel="stylesheet" href="./src/styles/product-details.css" />
+    <link
+    rel="stylesheet"
+    href="./src/styles/checkout.css"
+/>
   </head>
   <body>
     <!-- =====================================================
@@ -210,39 +215,35 @@
             <a href="#produtos" class="text-link"> Ver produtos </a>
           </header>
 
-       <div class="inspiration-grid">
+          <div class="inspiration-grid">
+            <inspiration-card
+              imagem="./src/assets/sala-de-estar.jpg"
+              alt="Sala de estar decorada com tons naturais"
+              titulo="Sala de estar"
+              descricao="Tons naturais para criar um ambiente confortável e sofisticado."
+              link="#produtos"
+              acao="Explorar cores"
+              tamanho="inspiration-card--large"
+            ></inspiration-card>
 
-    <inspiration-card
-        imagem="./src/assets/sala-de-estar.jpg"
-        alt="Sala de estar decorada com tons naturais"
-        titulo="Sala de estar"
-        descricao="Tons naturais para criar um ambiente confortável e sofisticado."
-        link="#produtos"
-        acao="Explorar cores"
-        tamanho="inspiration-card--large"
-    ></inspiration-card>
+            <inspiration-card
+              imagem="./src/assets/Cozinha.jpg"
+              alt="Cozinha moderna com cores claras"
+              titulo="Cozinha"
+              descricao="Cores que deixam o ambiente mais leve."
+              link="#produtos"
+              acao="Ver inspiração"
+            ></inspiration-card>
 
-
-    <inspiration-card
-        imagem="./src/assets/Cozinha.jpg"
-        alt="Cozinha moderna com cores claras"
-        titulo="Cozinha"
-        descricao="Cores que deixam o ambiente mais leve."
-        link="#produtos"
-        acao="Ver inspiração"
-    ></inspiration-card>
-
-
-    <inspiration-card
-        imagem="./src/assets/Quarto.jpg"
-        alt="Quarto decorado com cores suaves"
-        titulo="Quarto"
-        descricao="Tons suaves para criar uma atmosfera tranquila."
-        link="#produtos"
-        acao="Ver inspiração"
-    ></inspiration-card>
-
-</div>
+            <inspiration-card
+              imagem="./src/assets/Quarto.jpg"
+              alt="Quarto decorado com cores suaves"
+              titulo="Quarto"
+              descricao="Tons suaves para criar uma atmosfera tranquila."
+              link="#produtos"
+              acao="Ver inspiração"
+            ></inspiration-card>
+          </div>
         </div>
       </section>
 
@@ -273,7 +274,10 @@
     <!-- =====================================================
          FOOTER
          ===================================================== -->
-  <site-footer></site-footer>
+    <site-footer></site-footer>
+    <product-details></product-details>
+     <cart-component></cart-component>
+
     <script src="./src/js/navigation.js" defer></script>
 
     <script type="module" src="./src/components/Header/Header.js"></script>
@@ -289,17 +293,21 @@
       type="module"
       src="./src/components/CategoryCard/CategoryCard.js"
     ></script>
-    <script type="module" src="./src/components/InspirationCard/InspirationCard.js"></script>
-     
     <script
-    type="module"
-    src="./src/components/ColorPalette/ColorPalette.js"
-></script>
+      type="module"
+      src="./src/components/InspirationCard/InspirationCard.js"
+    ></script>
 
-<script
-    type="module"
-    src="./src/components/Footer/Footer.js"
-></script>
+    <script
+      type="module"
+      src="./src/components/ColorPalette/ColorPalette.js"
+    ></script>
+
+    <script type="module" src="./src/components/Footer/Footer.js"></script>
+    <script
+      type="module"
+      src="./src/components/ProductDetails/ProductDetails.js"
+    ></script>
     <script type="module" src="./src/js/app.js"></script>
   </body>
 </html>

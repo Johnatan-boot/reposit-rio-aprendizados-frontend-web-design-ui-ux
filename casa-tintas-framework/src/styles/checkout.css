@@ -1,0 +1,296 @@
+/* =========================================================
+   CHECKOUT
+   ========================================================= */
+
+.checkout {
+    padding: var(--space-8) 0 var(--space-12);
+    background: var(--color-background);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.checkout__header {
+    margin-bottom: var(--space-8);
+    max-width: 760px;
+}
+
+.checkout__header h1 {
+    margin-bottom: var(--space-2);
+}
+
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+
+.checkout__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: var(--space-6);
+    align-items: start;
+}
+
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
+
+.checkout-section {
+    padding: var(--space-6);
+    margin-bottom: var(--space-5);
+    background: var(--color-surface);
+    border:
+        var(--border-width-thin)
+        solid
+        var(--color-border);
+    border-radius: var(--border-radius-xl);
+}
+
+.checkout-section__header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+}
+
+.checkout-section__header h2 {
+    margin: 0 0 var(--space-1);
+}
+
+.checkout-section__header p {
+    margin: 0;
+}
+
+.checkout-section__number {
+    display: grid;
+    place-items: center;
+    flex: 0 0 2rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-weight: var(--font-weight-bold);
+}
+
+
+/* =========================================================
+   FORMULÁRIOS
+   ========================================================= */
+
+.checkout-form {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.checkout-form__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+}
+
+.checkout-form__grid--three {
+    grid-template-columns:
+        minmax(100px, 0.7fr)
+        minmax(160px, 1fr)
+        minmax(160px, 1fr);
+}
+
+.form-field {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.form-field label {
+    font-weight: var(--font-weight-medium);
+}
+
+.form-field input,
+.form-field select {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0 var(--space-3);
+    border:
+        var(--border-width-thin)
+        solid
+        var(--color-border);
+    border-radius: var(--border-radius-md);
+    background: var(--color-white);
+    font: inherit;
+    color: var(--color-text);
+}
+
+.form-field input:focus,
+.form-field select:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   PAGAMENTO
+   ========================================================= */
+
+.payment-options {
+    display: grid;
+    gap: var(--space-3);
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.payment-options legend {
+    margin-bottom: var(--space-3);
+    font-weight: var(--font-weight-bold);
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    border:
+        var(--border-width-thin)
+        solid
+        var(--color-border);
+    border-radius: var(--border-radius-lg);
+    cursor: pointer;
+}
+
+.payment-option:hover {
+    border-color: var(--color-primary);
+}
+
+.payment-option input {
+    accent-color: var(--color-primary);
+}
+
+.payment-option span {
+    display: grid;
+    gap: 2px;
+}
+
+.payment-option small {
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   RESUMO
+   ========================================================= */
+
+.checkout__sidebar {
+    position: sticky;
+    top: var(--space-5);
+}
+
+.order-summary {
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border:
+        var(--border-width-thin)
+        solid
+        var(--color-border);
+    border-radius: var(--border-radius-xl);
+}
+
+.order-summary h2 {
+    margin-top: 0;
+}
+
+.order-summary__items {
+    display: grid;
+    gap: var(--space-3);
+    margin: var(--space-5) 0;
+}
+
+.order-summary__item {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-3);
+}
+
+.order-summary__item div {
+    display: grid;
+    gap: 2px;
+}
+
+.order-summary__item span {
+    font-size: var(--font-size-sm);
+    opacity: 0.7;
+}
+
+.order-summary__totals {
+    display: grid;
+    gap: var(--space-3);
+    padding-top: var(--space-4);
+    border-top:
+        var(--border-width-thin)
+        solid
+        var(--color-border);
+}
+
+.order-summary__totals > div {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-3);
+}
+
+.order-summary__total {
+    padding-top: var(--space-3);
+    border-top:
+        var(--border-width-thin)
+        solid
+        var(--color-border);
+    font-size: var(--font-size-lg);
+}
+
+.order-summary__submit {
+    width: 100%;
+    margin-top: var(--space-5);
+}
+
+.order-summary__empty {
+    margin: 0;
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .checkout__layout {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout__sidebar {
+        position: static;
+    }
+}
+
+
+@media (max-width: 640px) {
+
+    .checkout {
+        padding: var(--space-6) 0 var(--space-8);
+    }
+
+    .checkout-section {
+        padding: var(--space-4);
+    }
+
+    .checkout-form__grid,
+    .checkout-form__grid--three {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-section__header {
+        gap: var(--space-2);
+    }
+}

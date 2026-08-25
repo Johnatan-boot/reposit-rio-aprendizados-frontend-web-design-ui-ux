@@ -1,0 +1,165 @@
+<!doctype html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Finalize seu pedido na Casa de Tintas."
+    >
+
+    <meta
+        name="theme-color"
+        content="#1d1e18"
+    >
+
+    <title>
+        Checkout | Casa de Tintas
+    </title>
+
+
+    <!-- =====================================================
+         CSS GLOBAL
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="./src/styles/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./src/styles/tokens.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./src/styles/base.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./src/styles/ux.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./src/styles/media.css"
+    >
+
+
+    <!-- =====================================================
+         CSS CHECKOUT
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="./src/styles/checkout.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         ACESSIBILIDADE
+    ====================================================== -->
+
+    <a
+        class="skip-link"
+        href="#main-content"
+    >
+        Pular para o conteúdo principal
+    </a>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <site-header></site-header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main id="main-content">
+
+        <!-- =================================================
+             CHECKOUT PAGE
+        ================================================== -->
+
+        <checkout-page></checkout-page>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <site-footer></site-footer>
+
+
+    <!-- =====================================================
+         HEADER / FOOTER
+    ====================================================== -->
+
+    <script
+        type="module"
+        src="./src/components/Header/Header.js"
+    ></script>
+
+    <script
+        type="module"
+        src="./src/components/Footer/Footer.js"
+    ></script>
+
+
+    <!-- =====================================================
+         CHECKOUT COMPONENTS
+    ====================================================== -->
+
+    <script
+        type="module"
+        src="./src/components/Checkout/CustomerForm.js"
+    ></script>
+
+    <script
+        type="module"
+        src="./src/components/Checkout/AddressForm.js"
+    ></script>
+
+    <script
+        type="module"
+        src="./src/components/Checkout/PaymentForm.js"
+    ></script>
+
+    <script
+        type="module"
+        src="./src/components/Checkout/OrderSummary.js"
+    ></script>
+
+
+    <!-- =====================================================
+         CHECKOUT PAGE
+    ====================================================== -->
+
+    <script
+        type="module"
+        src="./src/pages/Checkout/CheckoutPage.js"
+    ></script>
+
+</body>
+
+</html>

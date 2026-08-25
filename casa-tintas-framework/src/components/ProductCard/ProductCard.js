@@ -13,34 +13,46 @@ class ProductCard extends HTMLElement {
     }
 
     connectedCallback() {
+
         this.render();
+
     }
 
     set data(produto) {
+
         this.produto = produto;
+
         this.render();
+
     }
 
     get data() {
+
         return this.produto;
+
     }
 
     render() {
 
         if (!this.produto) {
+
             return;
+
         }
 
         const produto = this.produto;
 
         this.innerHTML = `
+
             <article class="product-card">
 
                 <div class="product-card__image">
+
                     <img
                         src="${produto.imagem}"
                         alt="${produto.nome}"
                     />
+
                 </div>
 
                 <div class="product-card__body">
@@ -74,7 +86,7 @@ class ProductCard extends HTMLElement {
                         <button
                             type="button"
                             class="button button--small"
-                            data-action="buy"
+                            data-action="details"
                         >
                             Comprar
                         </button>
@@ -84,38 +96,53 @@ class ProductCard extends HTMLElement {
                 </div>
 
             </article>
+
         `;
 
         this.configurarEventos();
+
     }
 
     configurarEventos() {
 
         const button = this.querySelector(
-            '[data-action="buy"]'
+            '[data-action="details"]'
         );
 
         if (!button) {
+
             return;
+
         }
 
         button.addEventListener(
             "click",
             () => {
 
-                this.dispatchEvent(
-                    new CustomEvent(
-                        "cart:add",
-                        {
-                            detail: this.produto,
-                            bubbles: true
-                        }
-                    )
+                const productDetails =
+                    document.querySelector(
+                        "product-details"
+                    );
+
+                if (!productDetails) {
+
+                    console.warn(
+                        "Componente <product-details> não encontrado."
+                    );
+
+                    return;
+
+                }
+
+                productDetails.abrir(
+                    this.produto
                 );
 
             }
         );
+
     }
+
 }
 
 customElements.define(

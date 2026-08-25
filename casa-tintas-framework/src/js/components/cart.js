@@ -3,182 +3,133 @@
 // =========================================================
 
 import {
-    getState,
-    removerProduto,
-    aumentarQuantidade,
-    diminuirQuantidade,
-    limparCarrinho,
-    obterQuantidadeCarrinho,
-    obterTotalCarrinho
+  getState,
+  removerProduto,
+  aumentarQuantidade,
+  diminuirQuantidade,
+  limparCarrinho,
+  obterQuantidadeCarrinho,
+  obterTotalCarrinho,
 } from "../state/store.js";
 
-
-import {
-    formatCurrency
-} from "../utils/currency.js";
-
+import { formatCurrency } from "../utils/currency.js";
 
 // =========================================================
 // REFERÊNCIAS
 // =========================================================
 
-let cartPanel;
-let cartItems;
-let cartTotal;
-let cartCount;
-
+let cartPanel = null;
+let cartItems = null;
+let cartTotal = null;
+let cartCount = null;
 
 // =========================================================
 // INICIALIZAR
 // =========================================================
 
 export function inicializarCarrinho() {
-
-    criarEstruturaCarrinho();
-
-    atualizarCarrinho();
-
+  criarEstruturaCarrinho();
+  atualizarCarrinho();
 }
-
 
 // =========================================================
 // CRIAR ESTRUTURA
 // =========================================================
 
 function criarEstruturaCarrinho() {
+  // Evita criar o carrinho duas vezes
+  if (cartPanel) {
+    return;
+  }
 
-    // =====================================================
-    // CONTADOR DO CARRINHO NO HEADER
-    // =====================================================
+  // =====================================================
+  // CONTADOR DO CARRINHO NO HEADER
+  // =====================================================
 
-    cartCount = document.querySelector(".cart-count");
+  cartCount = document.querySelector(".cart-count");
 
+  // =====================================================
+  // PAINEL DO CARRINHO
+  // =====================================================
 
-    // =====================================================
-    // PAINEL DO CARRINHO
-    // =====================================================
+  cartPanel = document.createElement("aside");
 
-    cartPanel =
-        document.createElement("aside");
+  cartPanel.className = "cart-panel";
+  cartPanel.setAttribute("aria-label", "Carrinho de compras");
 
+  cartPanel.innerHTML = `
+    <div class="cart-panel__header">
+      <h2>Carrinho</h2>
 
-    cartPanel.className =
-        "cart-panel";
+      <button
+        type="button"
+        class="cart-panel__close"
+        aria-label="Fechar carrinho"
+      >
+        ×
+      </button>
+    </div>
 
+    <div class="cart-panel__items"></div>
 
-    cartPanel.setAttribute(
-        "aria-label",
-        "Carrinho de compras"
-    );
+    <div class="cart-panel__footer">
+      <strong>Total</strong>
 
+      <strong class="cart-panel__total">
+        R$ 0,00
+      </strong>
 
-    cartPanel.innerHTML = `
+      <button
+        type="button"
+        class="button button--primary cart-panel__checkout"
+      >
+        Finalizar pedido
+      </button>
 
-        <div class="cart-panel__header">
+      <button
+        type="button"
+        class="button button--secondary cart-panel__clear"
+      >
+        Limpar carrinho
+      </button>
+    </div>
+  `;
 
-            <h2>
-                Carrinho
-            </h2>
+  document.body.appendChild(cartPanel);
 
-            <button
-                type="button"
-                class="cart-panel__close"
-                aria-label="Fechar carrinho"
-            >
-                ×
-            </button>
+  // =====================================================
+  // REFERÊNCIAS INTERNAS
+  // =====================================================
 
-        </div>
+  cartItems = cartPanel.querySelector(".cart-panel__items");
+  cartTotal = cartPanel.querySelector(".cart-panel__total");
 
+  // =====================================================
+  // CHECKOUT
+  // =====================================================
 
-        <div
-            class="cart-panel__items"
-        ></div>
+  cartPanel
+    .querySelector(".cart-panel__checkout")
+    .addEventListener("click", irParaCheckout);
 
+  // =====================================================
+  // FECHAR
+  // =====================================================
 
-        <div class="cart-panel__footer">
+  cartPanel
+    .querySelector(".cart-panel__close")
+    .addEventListener("click", fecharCarrinho);
 
-            <strong>
-                Total
-            </strong>
+  // =====================================================
+  // LIMPAR
+  // =====================================================
 
-            <strong
-                class="cart-panel__total"
-            >
-                R$ 0,00
-            </strong>
-
-
-            <button
-                type="button"
-                class="button button--primary cart-panel__checkout"
-            >
-                Finalizar pedido
-            </button>
-
-
-            <button
-                type="button"
-                class="button button--secondary cart-panel__clear"
-            >
-                Limpar carrinho
-            </button>
-
-        </div>
-
-    `;
-
-
-    document.body.appendChild(
-        cartPanel
-    );
-
-
-    cartItems =
-        cartPanel.querySelector(
-            ".cart-panel__items"
-        );
-
-
-    cartTotal =
-        cartPanel.querySelector(
-            ".cart-panel__total"
-        );
-
-
-    // =====================================================
-    // FECHAR
-    // =====================================================
-
-    cartPanel
-        .querySelector(
-            ".cart-panel__close"
-        )
-        .addEventListener(
-            "click",
-            fecharCarrinho
-        );
-
-
-    // =====================================================
-    // LIMPAR
-    // =====================================================
-
-    cartPanel
-        .querySelector(
-            ".cart-panel__clear"
-        )
-        .addEventListener(
-            "click",
-            () => {
-
-                limparCarrinho();
-
-                atualizarCarrinho();
-
-            }
-        );
-
+  cartPanel
+    .querySelector(".cart-panel__clear")
+    .addEventListener("click", () => {
+      limparCarrinho();
+      atualizarCarrinho();
+    });
 }
 
 // =========================================================
@@ -186,315 +137,201 @@ function criarEstruturaCarrinho() {
 // =========================================================
 
 export function atualizarCarrinho() {
+  if (!cartItems || !cartTotal) {
+    return;
+  }
 
-    if (!cartItems) {
-        return;
-    }
+  const state = getState();
 
+  // =====================================================
+  // LIMPAR ITENS
+  // =====================================================
 
-    // =====================================================
-    // ESTADO ATUAL
-    // =====================================================
+  cartItems.innerHTML = "";
 
-    const state =
-        getState();
+  // =====================================================
+  // CARRINHO VAZIO
+  // =====================================================
 
+  if (state.carrinho.length === 0) {
+    cartItems.innerHTML = `
+      <p class="cart-empty">
+        Seu carrinho está vazio.
+      </p>
+    `;
+  } else {
+    // ===================================================
+    // RENDERIZAR PRODUTOS
+    // ===================================================
 
-    // =====================================================
-    // LIMPA OS ITENS EXISTENTES
-    // =====================================================
+    state.carrinho.forEach((produto) => {
+      const item = criarItemCarrinho(produto);
 
-    cartItems.innerHTML = "";
+      cartItems.appendChild(item);
+    });
+  }
 
+  // =====================================================
+  // TOTAL
+  // =====================================================
 
-    // =====================================================
-    // CARRINHO VAZIO
-    // =====================================================
+  const total = obterTotalCarrinho();
 
-    if (
-        state.carrinho.length === 0
-    ) {
+  cartTotal.textContent = formatCurrency(total);
 
-        cartItems.innerHTML = `
+  // =====================================================
+  // QUANTIDADE
+  // =====================================================
 
-            <p class="cart-empty">
-                Seu carrinho está vazio.
-            </p>
+  const quantidade = obterQuantidadeCarrinho();
 
-        `;
+  // =====================================================
+  // CONTADOR DO HEADER
+  // =====================================================
 
-    }
+  if (cartCount) {
+    cartCount.textContent = quantidade;
 
-
-    // =====================================================
-    // RENDERIZA PRODUTOS
-    // =====================================================
-
-    state.carrinho.forEach(
-        (produto) => {
-
-            const item =
-                criarItemCarrinho(
-                    produto
-                );
-
-
-            cartItems.appendChild(
-                item
-            );
-
-        }
+    cartCount.setAttribute(
+      "aria-label",
+      `${quantidade} ${
+        quantidade === 1 ? "produto" : "produtos"
+      } no carrinho`,
     );
-
-
-    // =====================================================
-    // TOTAL FINANCEIRO
-    // =====================================================
-
-    const total =
-        obterTotalCarrinho();
-
-
-    cartTotal.textContent =
-        formatCurrency(
-            total
-        );
-
-
-    // =====================================================
-    // QUANTIDADE DE PRODUTOS
-    // =====================================================
-
-    const quantidade =
-        obterQuantidadeCarrinho();
-
-
-    // =====================================================
-    // ATUALIZA CONTADOR DO HEADER
-    // =====================================================
-
-    if (cartCount) {
-
-        cartCount.textContent =
-            quantidade;
-
-
-        cartCount.setAttribute(
-            "aria-label",
-            `${quantidade} ${
-                quantidade === 1
-                    ? "produto"
-                    : "produtos"
-            } no carrinho`
-        );
-
-    }
-
-
-    // =====================================================
-    // DEBUG
-    // =====================================================
-
-    console.log(
-        "Carrinho atualizado:",
-        state.carrinho
-    );
-
-
-    console.log(
-        "Quantidade:",
-        quantidade
-    );
-
-
-    console.log(
-        "Total:",
-        total
-    );
-
+  }
 }
 
-
 // =========================================================
-// ITEM
+// CRIAR ITEM DO CARRINHO
 // =========================================================
 
 function criarItemCarrinho(produto) {
+  const item = document.createElement("article");
 
-    const item =
-        document.createElement("article");
+  item.className = "cart-item";
 
+  const preco = Number(produto.preco) || 0;
+  const quantidade = Number(produto.quantidade) || 0;
+  const subtotal = preco * quantidade;
 
-    item.className =
-        "cart-item";
+  item.innerHTML = `
+    <div>
+      <h3>
+        ${produto.nome}
+      </h3>
 
+      <p>
+        ${formatCurrency(preco)}
+        <span class="cart-item__unit-label">
+          / unidade
+        </span>
+      </p>
+    </div>
 
-    const subtotal = Number(produto.preco) * produto.quantidade;
+    <div class="cart-item__actions">
 
-    item.innerHTML = `
+      <button
+        type="button"
+        data-action="decrease"
+        aria-label="Diminuir quantidade de ${produto.nome}"
+      >
+        −
+      </button>
 
-        <div>
+      <span>
+        ${quantidade}
+      </span>
 
-            <h3>
-                ${produto.nome}
-            </h3>
+      <button
+        type="button"
+        data-action="increase"
+        aria-label="Aumentar quantidade de ${produto.nome}"
+      >
+        +
+      </button>
 
-            <p>
-                ${formatCurrency(
-                    produto.preco
-                )}
-                <span class="cart-item__unit-label">/ unidade</span>
-            </p>
+      <button
+        type="button"
+        data-action="remove"
+        aria-label="Remover ${produto.nome} do carrinho"
+      >
+        Remover
+      </button>
 
-        </div>
+    </div>
 
+    <p class="cart-item__subtotal">
+      Subtotal:
+      <strong>
+        ${formatCurrency(subtotal)}
+      </strong>
+    </p>
+  `;
 
-        <div class="cart-item__actions">
+  // =====================================================
+  // AUMENTAR
+  // =====================================================
 
-            <button
-                type="button"
-                data-action="decrease"
-                aria-label="Diminuir quantidade de ${produto.nome}"
-            >
-                −
-            </button>
+  item
+    .querySelector('[data-action="increase"]')
+    .addEventListener("click", () => {
+      aumentarQuantidade(produto.id);
+      atualizarCarrinho();
+    });
 
+  // =====================================================
+  // DIMINUIR
+  // =====================================================
 
-            <span>
-                ${produto.quantidade}
-            </span>
+  item
+    .querySelector('[data-action="decrease"]')
+    .addEventListener("click", () => {
+      diminuirQuantidade(produto.id);
+      atualizarCarrinho();
+    });
 
+  // =====================================================
+  // REMOVER
+  // =====================================================
 
-            <button
-                type="button"
-                data-action="increase"
-                aria-label="Aumentar quantidade de ${produto.nome}"
-            >
-                +
-            </button>
+  item
+    .querySelector('[data-action="remove"]')
+    .addEventListener("click", () => {
+      removerProduto(produto.id);
+      atualizarCarrinho();
+    });
 
-
-            <button
-                type="button"
-                data-action="remove"
-                aria-label="Remover ${produto.nome} do carrinho"
-            >
-                Remover
-            </button>
-
-        </div>
-
-
-        <p class="cart-item__subtotal">
-            Subtotal:
-            <strong>${formatCurrency(subtotal)}</strong>
-        </p>
-
-    `;
-
-
-    // -----------------------------------------------------
-    // AUMENTAR
-    // -----------------------------------------------------
-
-    item
-        .querySelector(
-            '[data-action="increase"]'
-        )
-        .addEventListener(
-            "click",
-            () => {
-
-                aumentarQuantidade(
-                    produto.id
-                );
-
-                atualizarCarrinho();
-
-            }
-        );
-
-
-    // -----------------------------------------------------
-    // DIMINUIR
-    // -----------------------------------------------------
-
-    item
-        .querySelector(
-            '[data-action="decrease"]'
-        )
-        .addEventListener(
-            "click",
-            () => {
-
-                diminuirQuantidade(
-                    produto.id
-                );
-
-                atualizarCarrinho();
-
-            }
-        );
-
-
-    // -----------------------------------------------------
-    // REMOVER
-    // -----------------------------------------------------
-
-    item
-        .querySelector(
-            '[data-action="remove"]'
-        )
-        .addEventListener(
-            "click",
-            () => {
-
-                removerProduto(
-                    produto.id
-                );
-
-                atualizarCarrinho();
-
-            }
-        );
-
-
-    return item;
-
+  return item;
 }
 
-
 // =========================================================
-// ABRIR
+// ABRIR CARRINHO
 // =========================================================
 
 export function abrirCarrinho() {
+  if (!cartPanel) {
+    return;
+  }
 
-    if (!cartPanel) {
-        return;
-    }
-
-
-    cartPanel.classList.add(
-        "cart-panel--open"
-    );
-
+  cartPanel.classList.add("cart-panel--open");
 }
 
-
 // =========================================================
-// FECHAR
+// FECHAR CARRINHO
 // =========================================================
 
 export function fecharCarrinho() {
+  if (!cartPanel) {
+    return;
+  }
 
-    if (!cartPanel) {
-        return;
-    }
+  cartPanel.classList.remove("cart-panel--open");
+}
 
+// =========================================================
+// IR PARA O CHECKOUT
+// =========================================================
 
-    cartPanel.classList.remove(
-        "cart-panel--open"
-    );
-
+export function irParaCheckout() {
+  window.location.href = "./checkout.html";
 }
