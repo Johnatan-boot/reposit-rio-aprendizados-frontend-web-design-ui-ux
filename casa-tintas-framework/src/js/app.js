@@ -3,8 +3,6 @@
 // APP.JS
 // =========================================================
 
-import { buscarProdutos } from "./services/product-service.js";
-
 import { adicionarProduto } from "./state/store.js";
 
 import {
@@ -13,11 +11,11 @@ import {
   abrirCarrinho,
 } from "./components/cart.js";
 
+import { inicializarProdutos } from "./product-controller.js";
+
 // =========================================================
 // DOM
 // =========================================================
-
-const productGrid = document.querySelector("product-grid");
 
 const cartButton = document.querySelector("#cart-button");
 
@@ -66,23 +64,9 @@ async function iniciarAplicacao() {
 
   inicializarCarrinho();
 
-  try {
-    const produtos = await buscarProdutos();
+  // Carrega produtos + pesquisa + filtros + ordenação.
 
-    productGrid.data = produtos;
-
-    console.log(`${produtos.length} produtos carregados.`);
-  } catch (error) {
-    console.error("Erro ao iniciar aplicação:", error);
-
-    if (productGrid) {
-      productGrid.innerHTML = `
-            <p>
-                Não foi possível carregar os produtos.
-            </p>
-        `;
-    }
-  }
+  await inicializarProdutos();
 }
 
 // =========================================================

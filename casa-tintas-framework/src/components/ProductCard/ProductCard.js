@@ -2,7 +2,7 @@
 // PRODUCT CARD — WEB COMPONENT
 // =========================================================
 
-import { formatCurrency } from "/casa-tintas-framework/src/js/utils/currency.js";
+import { formatCurrency } from "../../js/utils/currency.js";
 
 class ProductCard extends HTMLElement {
 

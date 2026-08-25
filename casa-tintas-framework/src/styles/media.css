@@ -362,11 +362,13 @@
 
 
     /* -----------------------------------------------------
-       ESCONDE BUSCA E CARRINHO NO CELULAR PEQUENO
+       BUSCA E CARRINHO PERMANECEM ACESSÍVEIS NO CELULAR
+       (antes ficavam escondidos sem nenhuma outra forma
+       de abrir a pesquisa ou o carrinho)
        ----------------------------------------------------- */
 
     .navbar__actions .icon-button {
-        display: none;
+        display: inline-flex;
     }
 
 

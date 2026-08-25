@@ -63,3 +63,42 @@ product-grid {
     grid-template-columns: minmax(280px, 420px);
     justify-content: start;
 }
+
+
+/* =========================================================
+   POUCOS RESULTADOS — mantém o grid alinhado à esquerda
+   ========================================================= */
+
+.product-grid--few {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+    justify-content: start;
+}
+
+
+/* =========================================================
+   NENHUM RESULTADO
+   ========================================================= */
+
+product-grid.product-grid--empty {
+    display: block;
+}
+
+
+.search-empty {
+    text-align: center;
+    padding: 3rem 1rem;
+
+    border: 1px dashed var(--color-border, #d7ded9);
+    border-radius: 0.75rem;
+}
+
+
+.search-empty h3 {
+    margin: 0 0 0.5rem;
+}
+
+
+.search-empty p {
+    margin: 0;
+    color: var(--color-text-secondary);
+}

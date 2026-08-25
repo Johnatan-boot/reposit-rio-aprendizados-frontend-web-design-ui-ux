@@ -68,6 +68,63 @@
 
 
 /* =========================================================
+   LINHA DE PREÇO + ORDENAÇÃO
+   ========================================================= */
+
+.product-filters__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+
+    margin-top: 1rem;
+}
+
+
+.product-filters__price,
+.product-filters__sort {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+
+    font-size: var(--font-size-sm, 0.875rem);
+    color: var(--color-text-secondary);
+}
+
+
+.product-filters__price-value {
+    color: var(--color-text-main);
+}
+
+
+.product-filters__price input[type="range"] {
+    accent-color: var(--color-dusty-olive);
+    cursor: pointer;
+}
+
+
+.product-filters__sort select {
+    border: 1px solid var(--color-dusty-olive);
+    border-radius: 999px;
+
+    padding: 0.5rem 0.9rem;
+
+    background: transparent;
+    color: var(--color-carbon-black);
+
+    font: inherit;
+    cursor: pointer;
+}
+
+
+.product-filters__sort select:focus-visible,
+.product-filters__price input:focus-visible {
+    outline: 3px solid var(--color-dusty-olive);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
    MOBILE
    ========================================================= */
 

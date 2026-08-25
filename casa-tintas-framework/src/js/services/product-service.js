@@ -11,7 +11,7 @@
 
 // Local real do arquivo produtos.json
 const PRODUCTS_URL =
-    "/frontend/js/data/produtos.json";
+    "./src/js/data/produtos.json";
 
 
 // =========================================================

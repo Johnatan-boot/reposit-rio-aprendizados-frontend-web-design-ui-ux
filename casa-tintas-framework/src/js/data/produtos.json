@@ -6,7 +6,7 @@
     "quantidade": 100,
     "preco": 109.9,
     "categoria": "Econômica",
-    "imagem": "../assets/coralar.png"
+    "imagem": "./src/assets/coralar.png"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "quantidade": 100,
     "preco": 109.9,
     "categoria": "Standard",
-    "imagem": "../assets/super-lavavel.png"
+    "imagem": "./src/assets/Super-Lavavel.png"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "quantidade": 50,
     "preco": 189.9,
     "categoria": "Premium",
-    "imagem": "../assets/master-fosco.png"
+    "imagem": "./src/assets/master-fosco.png"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "quantidade": 45,
     "preco": 219.9,
     "categoria": "Premium",
-    "imagem": "../assets/super-lavavel.png"
+    "imagem": "./src/assets/Super-Lavavel.png"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "quantidade": 70,
     "preco": 89.9,
     "categoria": "Premium",
-    "imagem": "../assets/coralit-premium.png"
+    "imagem": "./src/assets/coralit-premium.png"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "quantidade": 50,
     "preco": 119.9,
     "categoria": "Standard",
-    "imagem": "../assets/grafiato.png"
+    "imagem": "./src/assets/grafiato.png"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "quantidade": 35,
     "preco": 149.9,
     "categoria": "Premium",
-    "imagem": "../assets/grafiato.png"
+    "imagem": "./src/assets/grafiato.png"
   },
   {
     "id": 8,
@@ -69,6 +69,6 @@
     "quantidade": 80,
     "preco": 59.9,
     "categoria": "Econômica",
-    "imagem": "../assets/grafiato.png"
+    "imagem": "./src/assets/grafiato.png"
   }
 ]

@@ -51,12 +51,15 @@ class ProductGrid extends HTMLElement {
         // NENHUM PRODUTO
         // =================================================
 
+        this.classList.toggle("product-grid--empty", this.produtos.length === 0);
+
         if (this.produtos.length === 0) {
 
             this.innerHTML = `
-                <p>
-                    Nenhum produto encontrado.
-                </p>
+                <div class="search-empty">
+                    <h3>Nenhum produto encontrado</h3>
+                    <p>Tente ajustar a pesquisa, a categoria ou a faixa de preço.</p>
+                </div>
             `;
 
             return;

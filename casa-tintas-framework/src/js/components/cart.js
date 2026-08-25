@@ -329,6 +329,8 @@ function criarItemCarrinho(produto) {
         "cart-item";
 
 
+    const subtotal = Number(produto.preco) * produto.quantidade;
+
     item.innerHTML = `
 
         <div>
@@ -341,6 +343,7 @@ function criarItemCarrinho(produto) {
                 ${formatCurrency(
                     produto.preco
                 )}
+                <span class="cart-item__unit-label">/ unidade</span>
             </p>
 
         </div>
@@ -380,6 +383,12 @@ function criarItemCarrinho(produto) {
             </button>
 
         </div>
+
+
+        <p class="cart-item__subtotal">
+            Subtotal:
+            <strong>${formatCurrency(subtotal)}</strong>
+        </p>
 
     `;
 
